@@ -15,14 +15,14 @@ Page({
         selectImage: false
       },
       {
-        name: '未发布',
+        name: '确认申购',
         selectImage: false
       }
     ],
     direction:[
       {name:"全部"},
-      {name:"融入"},
-      {name:'融出'}
+      { name:"入"},
+      { name:'出'}
     ],
     color: '#F4F4F4',
     datavalue:'',
@@ -103,65 +103,19 @@ Page({
         selectImage: true
       },
       {
-        title: '质押式回购',
-        value: '质押式回购',
+        title: '银行同存',
+        value: '银行同存',
         selectImage: false
       },
       {
-        title: '买断式回购',
-        value: '买断式回购',
+        title: '非银同存',
+        value: '非银同存',
         selectImage: false
       },
       {
-        title: '同业拆借',
-        value: '同业拆借',
+        title: '补贴存款',
+        value: '补贴存款',
         selectImage: false
-      }
-    ],
-    opponent:[
-      {
-        title: '国有',
-        selectcurrent: false
-      },
-      {
-        title: '股份',
-        selectcurrent: false
-      },
-      {
-        title: '城商',
-        selectcurrent: false
-      },
-      {
-        title: '农商',
-        selectcurrent: false
-      },
-      {
-        title: '农合',
-        selectcurrent: false
-      },
-      {
-        title: '外资',
-        selectcurrent: false
-      },
-      {
-        title: '村镇',
-        selectcurrent: false
-      },
-      {
-        title: '券商',
-        selectcurrent: false
-      },
-      {
-        title: '基金',
-        selectcurrent: false
-      },
-      {
-        title: '保险',
-        selectcurrent: false
-      },
-      {
-        title: '其他',
-        selectcurrent: false
       }
     ],
     smartlabel: []
@@ -227,7 +181,6 @@ Page({
   },
   //方向
   direction: function (e) {
-    console.log(e);
     var id = e.currentTarget.id;  //获取自定义的ID值  
     this.setData({
       directionId: id
@@ -245,16 +198,6 @@ Page({
     }
     this.setData(this.data)
   }, 
-  //对手范围
-  choicePpponent:function(event){
-    var that=this;
-    var currenid = event.currentTarget.id;
-    var currentstyle = that.data.opponent[currenid].selectcurrent;
-    that.data.opponent[currenid].selectcurrent = !currentstyle
-    that.setData({
-      opponent: that.data.opponent
-    }) 
-  },
   //智能标签
   choiceSmartlabel: function (event) {
     var that = this;
@@ -279,7 +222,7 @@ Page({
       data: {
         userid: user.id,
         token: user.token,
-        'type': 'ZJ'
+        'type': 'CK'
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -351,17 +294,6 @@ Page({
       }
     }
 
-    var opponentStr = '';
-    for (var i = 0; i < self.data.opponent.length; i++) {
-      if (self.data.opponent[i].selectcurrent == true) {
-        if (opponentStr == null || opponentStr==''){
-          opponentStr = self.data.opponent[i].title;
-        }else{
-          opponentStr = opponentStr + "," + self.data.opponent[i].title;
-        }
-      }
-    }
-
     var smartlabelStr = '';
     for (var i = 0; i < self.data.smartlabel.length; i++) {
       if (self.data.smartlabel[i].selectcurrent == true) {
@@ -381,7 +313,6 @@ Page({
       minMoney: minMoneyStr,
       maxMoney: maxMoneyStr,
       transType: transTypeStr,
-      opponentRange: opponentStr,
       label: smartlabelStr,
     }) 
 
@@ -417,11 +348,6 @@ Page({
       } else {
         self.data.transaction[i].selectImage = false
       }
-      self.setData(self.data)
-    }
-    
-    for (var i = 0; i < self.data.opponent.length; i++) {
-      self.data.opponent[i].selectcurrent = false
       self.setData(self.data)
     }
 

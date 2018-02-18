@@ -15,14 +15,14 @@ Page({
         selectImage: false
       },
       {
-        name: '未发布',
+        name: '确认申购',
         selectImage: false
       }
     ],
     direction:[
       {name:"全部"},
-      {name:"融入"},
-      {name:'融出'}
+      {name:"买入"},
+      {name:'卖出'}
     ],
     color: '#F4F4F4',
     datavalue:'',
@@ -72,27 +72,27 @@ Page({
     money: [
       {
         title: '全部',
-        value: ',',
-        selectImage: true
+        value:',',
+        selectImage:true
       },
       {
-        title: '< 5000万',
-        value: ',0.5',
+        title: '< 100万',
+        value: ',100',
+        selectImage:false
+      },
+      {
+        title: '100万-500万',
+        value: '100,500',
         selectImage: false
       },
       {
-        title: '5000万 - 1亿',
-        value: '0.5,1',
+        title: '500万-1000万',
+        value: '500,1000',
         selectImage: false
       },
       {
-        title: '1亿 - 5亿',
-        value: '1,5',
-        selectImage: false
-      },
-      {
-        title: '> 5亿',
-        value: '5,',
+        title: '> 1000万',
+        value: '1000,',
         selectImage: false
       }
     ],
@@ -103,65 +103,19 @@ Page({
         selectImage: true
       },
       {
-        title: '质押式回购',
-        value: '质押式回购',
+        title: '即期',
+        value: '即期',
         selectImage: false
       },
       {
-        title: '买断式回购',
-        value: '买断式回购',
+        title: '远期',
+        value: '远期',
         selectImage: false
       },
       {
-        title: '同业拆借',
-        value: '同业拆借',
+        title: '掉期',
+        value: '掉期',
         selectImage: false
-      }
-    ],
-    opponent:[
-      {
-        title: '国有',
-        selectcurrent: false
-      },
-      {
-        title: '股份',
-        selectcurrent: false
-      },
-      {
-        title: '城商',
-        selectcurrent: false
-      },
-      {
-        title: '农商',
-        selectcurrent: false
-      },
-      {
-        title: '农合',
-        selectcurrent: false
-      },
-      {
-        title: '外资',
-        selectcurrent: false
-      },
-      {
-        title: '村镇',
-        selectcurrent: false
-      },
-      {
-        title: '券商',
-        selectcurrent: false
-      },
-      {
-        title: '基金',
-        selectcurrent: false
-      },
-      {
-        title: '保险',
-        selectcurrent: false
-      },
-      {
-        title: '其他',
-        selectcurrent: false
       }
     ],
     smartlabel: []
@@ -227,7 +181,6 @@ Page({
   },
   //方向
   direction: function (e) {
-    console.log(e);
     var id = e.currentTarget.id;  //获取自定义的ID值  
     this.setData({
       directionId: id
@@ -245,16 +198,6 @@ Page({
     }
     this.setData(this.data)
   }, 
-  //对手范围
-  choicePpponent:function(event){
-    var that=this;
-    var currenid = event.currentTarget.id;
-    var currentstyle = that.data.opponent[currenid].selectcurrent;
-    that.data.opponent[currenid].selectcurrent = !currentstyle
-    that.setData({
-      opponent: that.data.opponent
-    }) 
-  },
   //智能标签
   choiceSmartlabel: function (event) {
     var that = this;
@@ -279,7 +222,7 @@ Page({
       data: {
         userid: user.id,
         token: user.token,
-        'type': 'ZJ'
+        'type': 'WH'
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -351,17 +294,6 @@ Page({
       }
     }
 
-    var opponentStr = '';
-    for (var i = 0; i < self.data.opponent.length; i++) {
-      if (self.data.opponent[i].selectcurrent == true) {
-        if (opponentStr == null || opponentStr==''){
-          opponentStr = self.data.opponent[i].title;
-        }else{
-          opponentStr = opponentStr + "," + self.data.opponent[i].title;
-        }
-      }
-    }
-
     var smartlabelStr = '';
     for (var i = 0; i < self.data.smartlabel.length; i++) {
       if (self.data.smartlabel[i].selectcurrent == true) {
@@ -381,7 +313,6 @@ Page({
       minMoney: minMoneyStr,
       maxMoney: maxMoneyStr,
       transType: transTypeStr,
-      opponentRange: opponentStr,
       label: smartlabelStr,
     }) 
 
@@ -417,11 +348,6 @@ Page({
       } else {
         self.data.transaction[i].selectImage = false
       }
-      self.setData(self.data)
-    }
-    
-    for (var i = 0; i < self.data.opponent.length; i++) {
-      self.data.opponent[i].selectcurrent = false
       self.setData(self.data)
     }
 

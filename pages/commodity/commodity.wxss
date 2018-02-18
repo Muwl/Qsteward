@@ -1,0 +1,90 @@
+@import '../../utils/refresh/refreshView.wxss';
+
+.capitalBox{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 14rpx;
+  padding: 50rpx 0rpx 150rpx;
+} 
+.capitalList{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  background: #FFFFFF;
+  box-shadow: 0 1px 15px 0 rgba(0,0,0,0.10);
+  border-radius: 6px;
+  padding: 32rpx 15rpx 32rpx 0rpx;
+  margin-bottom: 40rpx
+}
+.listPic{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  width: 140rpx;
+  height: 99rpx;
+}
+.listPic image{
+  width: 69rpx;
+  height: 49rpx;
+}
+.listText{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex: 1;
+  height: 99rpx;
+  border-left: 1px solid #EDEDED;
+  padding: 0rpx 15rpx 0rpx 32rpx
+}
+.listTextTitle{
+  flex: 1;
+  font-family: PingFangSC-Medium;
+  font-size:22rpx;
+  color: #080808;
+}
+.listTextContent{
+  display: flex;
+  flex: 1;
+  justify-content:space-between;
+  font-family: PingFangSC-Medium;
+  font-size:20rpx;
+  color: #7B7B7B
+}
+.redText{
+  color: #FF0000;
+}
+.changeBtn{
+  width: 585rpx;
+  height: 88rpx;
+  background: #8392EA;
+  box-shadow: 0 1px 15px 0 rgba(0,0,0,0.15);
+  border-radius: 100px;
+  line-height: 88rpx;
+  margin:0rpx auto;
+  position: fixed;
+  bottom: 60rpx;
+  left: 0;
+  right: 0;
+}
+.change-btn{
+  display: block;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+.changeBtn image{
+  width: 16rpx;
+  height: 27rpx;
+  position: absolute;
+  right: 33rpx;
+  top:31rpx
+}
+.chooseHelp{
+  display: flex;
+  justify-content:space-between;
+  font-family: PingFangSC-Medium;
+  font-size:30rpx;
+  color: #8C959F;
+  line-height: 64rpx;
+}

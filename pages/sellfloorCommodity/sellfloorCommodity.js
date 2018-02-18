@@ -5,6 +5,21 @@ Page({
     currentImgurl:'../../images/close_icon.png',
     stardate: '',
     enddate:'',
+    id: '0',
+    commodityNames: [
+      {
+        name: '全部',
+        value: ''
+      },
+      {
+        name: '煤炭',
+        value: '煤炭'
+      },
+      {
+        name: '油品',
+        value: '油品'
+      }
+    ],
     audit: [
       {
         name: '全部',
@@ -21,53 +36,12 @@ Page({
     ],
     direction:[
       {name:"全部"},
-      {name:"融入"},
-      {name:'融出'}
+      { name:"出"},
+      { name:'入'}
     ],
     color: '#F4F4F4',
     datavalue:'',
-    id:'0',
-    timeLimtList:[
-      {
-        name: '全部',
-        value: ''
-      },
-      {
-        name: '隔夜',
-        value: '隔夜'
-      },
-      {
-        name: '7D',
-        value: '7D'
-      },
-      {
-        name: '14D',
-        value: '14D'
-      },
-       {
-         name: '21D',
-         value: '21D'
-      }, {
-         name: '1M',
-         value: '1M'
-      }, {
-         name: '2M',
-         value: '2M'
-      }, {
-         name: '3M',
-         value: '3M'
-      }, {
-         name: '6M',
-         value: '6M'
-      }, {
-         name: '9M',
-          value: '9M'
-      },
-      {
-        name: '1Y',
-         value: '1Y'
-      },
-    ],
+   
     directionId:'',
     money: [
       {
@@ -76,92 +50,44 @@ Page({
         selectImage: true
       },
       {
-        title: '< 5000万',
-        value: ',0.5',
+        title: '< 3000',
+        value: ',3000',
         selectImage: false
       },
       {
-        title: '5000万 - 1亿',
-        value: '0.5,1',
+        title: '3000 - 3500',
+        value: '3000,3500',
         selectImage: false
       },
       {
-        title: '1亿 - 5亿',
-        value: '1,5',
+        title: '3500 - 4000',
+        value: '3500,4000',
         selectImage: false
       },
       {
-        title: '> 5亿',
-        value: '5,',
-        selectImage: false
-      }
-    ],
-    transaction: [
-      {
-        title: '全部',
-        value:'',
-        selectImage: true
-      },
-      {
-        title: '质押式回购',
-        value: '质押式回购',
+        title: '4000 - 4500',
+        value: '4000,4500',
         selectImage: false
       },
       {
-        title: '买断式回购',
-        value: '买断式回购',
+        title: '4500 - 5000',
+        value: '4500,5000',
         selectImage: false
       },
       {
-        title: '同业拆借',
-        value: '同业拆借',
+        title: '5000 - 5500',
+        value: '5000,5500',
         selectImage: false
-      }
-    ],
-    opponent:[
-      {
-        title: '国有',
-        selectcurrent: false
       },
       {
-        title: '股份',
-        selectcurrent: false
+        title: '5500 - 6000',
+        value: '5500,6000',
+        selectImage: false
       },
       {
-        title: '城商',
-        selectcurrent: false
-      },
-      {
-        title: '农商',
-        selectcurrent: false
-      },
-      {
-        title: '农合',
-        selectcurrent: false
-      },
-      {
-        title: '外资',
-        selectcurrent: false
-      },
-      {
-        title: '村镇',
-        selectcurrent: false
-      },
-      {
-        title: '券商',
-        selectcurrent: false
-      },
-      {
-        title: '基金',
-        selectcurrent: false
-      },
-      {
-        title: '保险',
-        selectcurrent: false
-      },
-      {
-        title: '其他',
-        selectcurrent: false
+        title: '> 6000',
+        value: '6000,',
+        selectImage: false
       }
     ],
     smartlabel: []
@@ -233,28 +159,6 @@ Page({
       directionId: id
     })
   },
-  //交易类型
-  transactionClick: function (event) {
-    for (var i = 0; i < this.data.transaction.length; i++) {
-      if (event.currentTarget.id == i) {
-        this.data.transaction[i].selectImage = true
-      }
-      else {
-        this.data.transaction[i].selectImage = false
-      }
-    }
-    this.setData(this.data)
-  }, 
-  //对手范围
-  choicePpponent:function(event){
-    var that=this;
-    var currenid = event.currentTarget.id;
-    var currentstyle = that.data.opponent[currenid].selectcurrent;
-    that.data.opponent[currenid].selectcurrent = !currentstyle
-    that.setData({
-      opponent: that.data.opponent
-    }) 
-  },
   //智能标签
   choiceSmartlabel: function (event) {
     var that = this;
@@ -279,7 +183,7 @@ Page({
       data: {
         userid: user.id,
         token: user.token,
-        'type': 'ZJ'
+        'type': 'SP'
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -344,24 +248,6 @@ Page({
     var minMoneyStr= moneyStr.split(',')[0];
     var maxMoneyStr = moneyStr.split(',')[1];;
 
-    var transTypeStr = '';
-    for (var i = 0; i < self.data.transaction.length; i++) {
-      if (self.data.transaction[i].selectImage == true) {
-        transTypeStr = self.data.transaction[i].value;
-      }
-    }
-
-    var opponentStr = '';
-    for (var i = 0; i < self.data.opponent.length; i++) {
-      if (self.data.opponent[i].selectcurrent == true) {
-        if (opponentStr == null || opponentStr==''){
-          opponentStr = self.data.opponent[i].title;
-        }else{
-          opponentStr = opponentStr + "," + self.data.opponent[i].title;
-        }
-      }
-    }
-
     var smartlabelStr = '';
     for (var i = 0; i < self.data.smartlabel.length; i++) {
       if (self.data.smartlabel[i].selectcurrent == true) {
@@ -377,11 +263,9 @@ Page({
       endTime: self.data.enddate,
       status: statusStr,
       direction: dirStr,
-      timeLimit: self.data.timeLimtList[self.data.id].value,
-      minMoney: minMoneyStr,
-      maxMoney: maxMoneyStr,
-      transType: transTypeStr,
-      opponentRange: opponentStr,
+      commodityName: self.data.commodityNames[self.data.id].value,
+      minthickness: minMoneyStr,
+      maxthickness: maxMoneyStr,
       label: smartlabelStr,
     }) 
 
@@ -408,20 +292,6 @@ Page({
       } else {
         self.data.money[i].selectImage = false
       }
-      self.setData(self.data)
-    }
-
-    for (var i = 0; i < self.data.transaction.length; i++) {
-      if (i == 0) {
-        self.data.transaction[i].selectImage = true
-      } else {
-        self.data.transaction[i].selectImage = false
-      }
-      self.setData(self.data)
-    }
-    
-    for (var i = 0; i < self.data.opponent.length; i++) {
-      self.data.opponent[i].selectcurrent = false
       self.setData(self.data)
     }
 
