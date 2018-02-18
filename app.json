@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/transDetail/transDetail",
     "pages/index/index",
     "pages/business/business",
     "pages/mysgList/mysgList",

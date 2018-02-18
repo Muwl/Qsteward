@@ -4,7 +4,7 @@
     <image src="../../images/LOGO.png"></image>
   </view>
   <view class="logoNew">
-    <view class="textlogo"><text>登录1</text></view>
+    <view class="textlogo"><text>登录</text></view>
     <view class="login-item">
       <view class="login-item-info">Phone Number</view>
       <view class="login-item-input">
