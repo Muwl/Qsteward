@@ -16,11 +16,11 @@
     </view>
     <view class="writeInformation">
       <text>Name</text>
-      <input type="text" placeholder='请输入您的名字 '></input>
+      <input type="text" placeholder='请输入您的名字 ' bindinput="usernameInput" ></input>
     </view>
     <view class="writeInformation">
       <text>Phone</text>
-      <input type='number' placeholder='请输入您的手机号 '></input>
+      <input type='number' placeholder='请输入您的手机号 ' bindinput="phoneInput" ></input>
     </view> 
   </view>
 

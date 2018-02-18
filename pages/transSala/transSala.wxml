@@ -1,12 +1,12 @@
 <!--我要申购-->
 <view class="container">
   <view class="contentType">
-    <block wx:for-items="{{initUrl}}" wx:key="initUrl">
+    <block wx:for-items="{{navItems}}" wx:key="navItems">
       <view class="contentList">
         <view id='{{index}}' class="everycontent" bindtap="itemBtnClick">
           <image src='{{item.img}}' class="typeImage" mode="aspectFill"></image>
-          <text class="texta">{{item.title}}</text>
-          <text class="textb">{{item.titleEn}}</text>
+          <text class="texta"  id='{{index}}' >{{item.title}}</text>
+          <text class="textb"  id='{{index}}' >{{item.titleEn}}</text>
         </view>
       </view>  
     </block> 
