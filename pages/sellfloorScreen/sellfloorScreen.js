@@ -30,7 +30,7 @@ Page({
     timeLimtList:[
       {
         name: '全部',
-        value: 'all'
+        value: ''
       },
       {
         name: '隔夜',
@@ -72,12 +72,12 @@ Page({
     money: [
       {
         title: '全部',
-        value:'null,null',
+        value:'',
         selectImage:true
       },
       {
         title: '< 5000万',
-        value: 'null,0.5',
+        value: ',0.5',
         selectImage:false
       },
       {
@@ -92,14 +92,14 @@ Page({
       },
       {
         title: '> 5亿',
-        value: '5,null',
+        value: '5,',
         selectImage: false
       }
     ],
     transaction: [
       {
         title: '全部',
-        value:'all',
+        value:'',
         selectImage: true
       },
       {
@@ -316,19 +316,19 @@ Page({
     var self=this;
     var pages = getCurrentPages();
     var prevPage = pages[pages.length - 2]; //上一个页面
-    var statusStr='all';
+    var statusStr='';
     for (var i = 0; i < self.data.audit.length;i++){
       if (self.data.audit[i].selectImage==true){
           if(i==0){
-            statusStr='all';
+            statusStr='';
           }else{
             statusStr = i;
           }
       }
     }
-    var dirStr ='all';
+    var dirStr ='';
     if (self.data.directionId==0){
-      dirStr ='all';
+      dirStr ='';
     }else{
       dirStr = self.data.direction[i],name;
     }
