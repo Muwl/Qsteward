@@ -1,0 +1,30 @@
+<!--资金交易大厅-->
+  <include src="../../utils/refresh/refreshHeaderView.wxml"/>
+<include src="../../utils/refresh/loadMoreFooterView.wxml"/>
+
+<scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight:-loadMoreHeight}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" > 
+<view style="width:100%;height:100%" bindtouchmove="move">
+   <block wx:for-items="{{itemDatas}}" wx:key="itemDatas">
+    <view class="capitalList">
+      <view class="listPic"><image src="../../images/icon_1.png"></image></view>
+      <view class="listText">
+        <view class="listTextTitle">运输类型 ：{{item.transportType}}</view>
+        <view class='listTextContent'>
+          <view>报盘方：<text class="redText">{{item.our}}</text></view>
+          <view>方	  向 ：<text class="redText">{{item.direction}}</text></view>
+        </view>
+        <view class='listTextContent'>
+          <view>数量（万吨）：<text>{{item.number}}</text></view>
+          <view>价格（元/吨）：<text>{{item.price}}</text></view>
+        </view>
+      </view>
+    </view>
+    </block>
+      </view>
+    </scroll-view>
+    <view class="changeBtn">
+      <navigator url='../sellfloorFreight/sellfloorFreight'>
+        <text class="change-btn" bindtap="changeBtnClick">点击进行筛选</text>
+        <image src="../../images/Rectangle .png"></image>
+      </navigator>  
+</view>  

@@ -15,14 +15,14 @@ Page({
         selectImage: false
       },
       {
-        name: '未发布',
+        name: '确认申购',
         selectImage: false
       }
     ],
     direction:[
       {name:"全部"},
-      {name:"融入"},
-      {name:'融出'}
+      { name:"供"},
+      { name:'需'}
     ],
     color: '#F4F4F4',
     datavalue:'',
@@ -33,91 +33,20 @@ Page({
         value: ''
       },
       {
-        name: '隔夜',
-        value: '隔夜'
+        name: '30',
+        value: '30'
       },
       {
-        name: '7D',
-        value: '7D'
+        name: '90',
+        value: '90'
       },
       {
-        name: '14D',
-        value: '14D'
-      },
-       {
-         name: '21D',
-         value: '21D'
-      }, {
-         name: '1M',
-         value: '1M'
-      }, {
-         name: '2M',
-         value: '2M'
-      }, {
-         name: '3M',
-         value: '3M'
-      }, {
-         name: '6M',
-         value: '6M'
-      }, {
-         name: '9M',
-          value: '9M'
-      },
-      {
-        name: '1Y',
-         value: '1Y'
-      },
+        name: '180',
+        value: '180'
+      }
     ],
     directionId:'',
-    money: [
-      {
-        title: '全部',
-        value: ',',
-        selectImage: true
-      },
-      {
-        title: '< 5000万',
-        value: ',0.5',
-        selectImage: false
-      },
-      {
-        title: '5000万 - 1亿',
-        value: '0.5,1',
-        selectImage: false
-      },
-      {
-        title: '1亿 - 5亿',
-        value: '1,5',
-        selectImage: false
-      },
-      {
-        title: '> 5亿',
-        value: '5,',
-        selectImage: false
-      }
-    ],
-    transaction: [
-      {
-        title: '全部',
-        value:'',
-        selectImage: true
-      },
-      {
-        title: '质押式回购',
-        value: '质押式回购',
-        selectImage: false
-      },
-      {
-        title: '买断式回购',
-        value: '买断式回购',
-        selectImage: false
-      },
-      {
-        title: '同业拆借',
-        value: '同业拆借',
-        selectImage: false
-      }
-    ],
+    
     opponent:[
       {
         title: '国有',
@@ -128,39 +57,11 @@ Page({
         selectcurrent: false
       },
       {
-        title: '城商',
-        selectcurrent: false
-      },
-      {
-        title: '农商',
-        selectcurrent: false
-      },
-      {
-        title: '农合',
-        selectcurrent: false
-      },
-      {
         title: '外资',
         selectcurrent: false
       },
       {
-        title: '村镇',
-        selectcurrent: false
-      },
-      {
-        title: '券商',
-        selectcurrent: false
-      },
-      {
-        title: '基金',
-        selectcurrent: false
-      },
-      {
-        title: '保险',
-        selectcurrent: false
-      },
-      {
-        title: '其他',
+        title: '民营',
         selectcurrent: false
       }
     ],
@@ -184,18 +85,6 @@ Page({
       }
       else {
         this.data.audit[i].selectImage = false
-      }
-    }
-    this.setData(this.data)
-  }, 
-  //金额点击
-  selectClick: function (event) {
-    for (var i = 0; i < this.data.money.length; i++) {
-      if (event.currentTarget.id == i) {
-        this.data.money[i].selectImage = true
-      }
-      else {
-        this.data.money[i].selectImage = false
       }
     }
     this.setData(this.data)
@@ -233,18 +122,6 @@ Page({
       directionId: id
     })
   },
-  //交易类型
-  transactionClick: function (event) {
-    for (var i = 0; i < this.data.transaction.length; i++) {
-      if (event.currentTarget.id == i) {
-        this.data.transaction[i].selectImage = true
-      }
-      else {
-        this.data.transaction[i].selectImage = false
-      }
-    }
-    this.setData(this.data)
-  }, 
   //对手范围
   choicePpponent:function(event){
     var that=this;
@@ -268,7 +145,7 @@ Page({
 
 
 //获取只能标签
-  getLabel:function(type){
+  getLabel:function(){
     var self = this
     wx.showLoading({
       mask: true
@@ -279,7 +156,7 @@ Page({
       data: {
         userid: user.id,
         token: user.token,
-        'type': 'ZJ'
+        'type': 'DKZ'
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -334,23 +211,6 @@ Page({
       dirStr = self.data.direction[self.data.directionId].name;
     }
 
-    var moneyStr='';
-    for (var i = 0; i < self.data.money.length;i++){
-      if (self.data.money[i].selectImage==true){
-        moneyStr = self.data.money[i].value;
-      }
-    }
-
-    var minMoneyStr= moneyStr.split(',')[0];
-    var maxMoneyStr = moneyStr.split(',')[1];;
-
-    var transTypeStr = '';
-    for (var i = 0; i < self.data.transaction.length; i++) {
-      if (self.data.transaction[i].selectImage == true) {
-        transTypeStr = self.data.transaction[i].value;
-      }
-    }
-
     var opponentStr = '';
     for (var i = 0; i < self.data.opponent.length; i++) {
       if (self.data.opponent[i].selectcurrent == true) {
@@ -378,13 +238,9 @@ Page({
       status: statusStr,
       direction: dirStr,
       timeLimit: self.data.timeLimtList[self.data.id].value,
-      minMoney: minMoneyStr,
-      maxMoney: maxMoneyStr,
-      transType: transTypeStr,
       opponentRange: opponentStr,
       label: smartlabelStr,
     }) 
-
     wx.navigateBack({
       delta: -1,
     })
@@ -402,24 +258,6 @@ Page({
       self.setData(self.data)
     }
 
-    for (var i = 0; i < self.data.money.length; i++) {
-      if (i == 0) {
-        self.data.money[i].selectImage = true
-      } else {
-        self.data.money[i].selectImage = false
-      }
-      self.setData(self.data)
-    }
-
-    for (var i = 0; i < self.data.transaction.length; i++) {
-      if (i == 0) {
-        self.data.transaction[i].selectImage = true
-      } else {
-        self.data.transaction[i].selectImage = false
-      }
-      self.setData(self.data)
-    }
-    
     for (var i = 0; i < self.data.opponent.length; i++) {
       self.data.opponent[i].selectcurrent = false
       self.setData(self.data)
@@ -435,7 +273,6 @@ Page({
       enddate: '',
       directionId:0,
       id:0,
-
     })
   }
 
