@@ -1,0 +1,99 @@
+<!--我的申购页面-->
+<view class="container">
+  <!--资金-->
+  <view class="mui-table" wx:if="{{showType=='ZJ'}}">
+    <view class="tableList tableListTitle">
+      <view>报盘方：深圳君创zj{{showType}}</view>
+      <view>状态：申购中</view>
+    </view>
+    <view class="tableList">
+      <view>方向：<text>融入</text></view>
+      <view>利率：<text>8%</text></view>
+    </view>
+    <view class="tableList">
+      <view>期限：1Y</view>
+      <view>金额（亿）：1</view>
+    </view>
+  </view>
+  <!--外汇-->
+  <view class="mui-table" wx:elif="{{showType=='WH'}}">
+    <view class="tableList tableListTitle">
+      <view>报盘方：深圳君创wh</view>
+      <view>状态：申购中</view>
+    </view>
+    <view class="tableList">
+      <view>方向：<text>融入</text></view>
+      <view>汇率：<text>8%</text></view>
+    </view>
+    <view class="tableList">
+      <view>期限：1Y</view>
+      <view>金额（万）：1</view>
+    </view>
+  </view>
+  <!--存款--> 
+  <view class="mui-table" wx:elif="{{showType=='CK'}}">
+    <view class="tableList tableListTitle">
+      <view>机构简称：深圳君创ck</view>
+      <view>状态：申购中</view>
+    </view>
+    <view class="tableList">
+      <view>方向：<text>融入</text></view>
+      <view>利率：<text>8%</text></view>
+    </view>
+    <view class="tableList">
+      <view>期限：1Y</view>
+      <view>金额（亿）：1</view>
+    </view>
+  </view>
+  <!--代开证-->
+  <view class="mui-table" wx:elif="{{showType=='DKZ'}}">
+    <view class="tableList tableListTitle">
+      <view>报盘方：深圳君创dkz</view>
+      <view>状态：申购中</view>
+    </view>
+    <view class="tableList">
+      <view>方向：<text>融入</text></view>
+      <view>代理费：<text>8%</text></view>
+    </view>
+    <view class="tableList">
+      <view>期限：1Y</view>
+      <view>金额（万）：1</view>
+    </view>
+  </view>
+  <!--商品-->
+  <view class="mui-table" wx:elif="{{showType=='SP'}}">
+    <view class="tableList tableListTitle">
+      <view>商品名称：深圳君创sp</view>
+      <view>状态：申购中</view>
+    </view>
+    <view class="tableList">
+      <view>报盘方：<text>融入</text></view>
+      <view>方向：<text>8%</text></view>
+    </view>
+    <view class="tableList">
+      <view>品种：1Y</view>
+      <view>价格：1</view>
+    </view>
+  </view>
+  <!--运费-->
+  <view class="mui-table" wx:elif="{{showType =='YF'}}">
+    <view class="tableList tableListTitle">
+      <view>运输类型：深圳君创</view>
+      <view>状态：申购中</view>
+    </view>
+    <view class="tableList">
+      <view>报盘方：<text>融入</text></view>
+      <view>方向：<text>8%</text></view>
+    </view>
+    <view class="tableList">
+      <view>数量（万吨）：1Y</view>
+      <view>价格（元/吨）：1</view>
+    </view>
+  </view>
+  <view class="changeBtn"> 
+      <navigator url='../mysgListSearch/mysgListSearch'>
+        <text class="change-btn" bindtap="changeBtnClick">点击进行筛选</text>
+        <image src="../../images/Rectangle .png"></image>
+      </navigator>  
+    </view>
+</view>

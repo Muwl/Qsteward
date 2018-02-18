@@ -1,0 +1,29 @@
+<!--业务-->
+<view class="container">
+  <view class="businessContent">
+    <view class='contentList'>
+      <navigator class="listHref" url='../contactUs/contactUs'>
+        <image src="../../images/release.png" class="bgPic"></image>
+        <view class="contextText">
+          <text>我要发布>></text>
+          <image src="../../images/release_1.png" class='textLine'></image>
+        </view>
+      </navigator>
+    </view>  
+    <view class='contentList'>
+      <navigator class="listHref" url='../transSala/transSala'>
+        <image src="../../images/release.png" class="bgPic"></image>
+        <view class="contextText">
+          <text>我要申购>></text>
+          <image src="../../images/purchase_1.png" class='textLine'></image>
+        </view>
+      </navigator>
+    </view>
+    <view class="btnClick">
+      <button type="default" class='seemore' bindtap='seemore'>我的发布</button>
+      <navigator class="listHref" url='../mysgList/mysgList'><button type="default" class='seemore'>
+        我的申购
+      </button></navigator>
+    </view>
+  </view>
+</view>

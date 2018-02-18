@@ -1,0 +1,50 @@
+/**index.wxss**/
+.contentType{
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  margin:20rpx 35rpx 0rpx;
+  color: #000;
+  font-size: 16px
+}
+.contentList{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0rpx 20rpx 20rpx;
+}
+.everycontent{
+  width: 100%;
+  height: 100%;
+  border: 2px solid #E7E7E7;
+  border-radius: 8px;
+  box-sizing:border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items:center
+}
+.typeImage{
+  width:96rpx;
+  height:96rpx;
+  margin: 73rpx 0px 0px 0px
+}
+.texta{
+  font-size: 32rpx;
+  color: #000;
+  margin: 20rpx 0rpx 5rpx
+}
+.textb{
+  font-size: 22rpx;
+  color: #8C959F
+}
+.seemore{
+  width: 640rpx;
+  height: 100rpx;
+  margin-bottom: 28rpx;
+  font-size: 24rpx;
+  color: #8C959F;
+  line-height: 100rpx;
+  background: #F4F4F4;
+  border-radius: 8px;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,111 @@
+.regPage{
+  padding-bottom: 43rpx
+}
+.logoNew{
+  width: 562rpx;
+  height:1042rpx;
+  margin:40rpx auto 0rpx;
+  box-sizing: border-box;
+  box-shadow: 0 5px 10px 0 rgba(38,125,206,0.07);
+  border-radius: 10px;
+  position: relative;
+  z-index: 0
+}
+.textlogo{
+  font-size: 34rpx;
+  color: #000;
+  margin:24rpx 0rpx 50rpx 30rpx;
+  font-family: PingFangSC-Medium;
+}
+.login-item{
+  width: 493rpx;
+  margin-left: 33rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 38rpx
+}
+.login-item-info{
+  flex: 1;
+  font-size: 22rpx;
+  color: #000;
+  margin-bottom: 20rpx
+}
+.login-item-input{
+  position: relative
+}
+.login-item-input .leftPic{
+  position: absolute;
+  left: 38rpx;
+  top:27rpx;
+  width: 22rpx;
+  height: 30rpx
+}
+.login-item-input input{
+  flex: 1;
+  padding: 0px 40rpx 0px 98rpx ;
+  height: 82rpx;
+  border: 1px solid #D4DCE4;
+  border-radius: 5.5px;
+  line-height: 82rpx;
+  font-size: 22rpx;
+  outline: none;
+  box-sizing: border-box
+}
+.seePassword{
+  overflow: hidden;
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  position: absolute;
+  top:26rpx;
+  right: 28rpx
+}
+.seePassword image{
+  width: 23rpx;
+  height: 16rpx;
+  margin-right: 6rpx
+}
+.seePassword text{
+  font-size: 20rpx;
+  color: #267DCE 
+}
+.verify-code input{
+  padding: 0rpx 140rpx 0rpx 98rpx
+}
+.clickGain{
+  position: absolute;
+  right: 0;
+  top:-1px;
+  width: 130rpx;
+  height:82rpx;
+  background: #ADC6FF;
+  border-radius: 5.5px;
+  text-align: center;
+  line-height:82rpx;
+  font-family: PingFangSC;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  display: inline-block
+}
+.login-btn{
+  margin-top: 28rpx;
+  font-size: 22rpx;
+  color: #ADC6FF;
+  text-align: center
+}
+.orWidth{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+}
+.goRegister{
+  margin-top:50rpx;
+  display: flex;
+  font-size: 22rpx;
+  color: #000;
+}
+.goRegister text{
+  color: #ADC6FF;
+  margin-left: 105rpx
+}

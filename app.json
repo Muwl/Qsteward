@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/business/business",
+    "pages/mysgList/mysgList",
+    "pages/mysgListSearch/mysgListSearch",
+    "pages/transSala/transSala",
+    "pages/more/more",
+    "pages/reg/reg",
+    "pages/user/user",
+    "pages/login/login",
+    "pages/forgetPassword/forgetPassword",
+    "pages/sellfloor/sellfloor",
+   "pages/sellfloorScreen/sellfloorScreen",
+    "pages/account/account",
+    "pages/password/password",
+    "pages/contactUs/contactUs",
+    "pages/userinfo/userinfo",
+    "pages/enterprise/enterprise",
+    "pages/capital/capital",
+    "pages/foreign/foreign",
+    "pages/deposit/deposit",
+    "pages/commodity/commodity",
+    "pages/freight/freight"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor":"#6c7ede",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#ADC6FF",
+    "selectedColor":"#fff",
+    "backgroundColor":"#6c7ede",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index_icon.png",
+        "selectedIconPath":"images/index_icon_click.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/business/business",
+        "iconPath": "images/business_icon.png",
+        "selectedIconPath": "images/business_icon_click.png",
+        "text": "业务"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/personal_icon.png",
+        "selectedIconPath": "images/personal_icon_click.png",
+        "text": "个人"
+      }
+    ]
+  }
+}

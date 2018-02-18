@@ -1,0 +1,74 @@
+page{
+  height: 100%
+}
+.userBox{
+  background: #f5f6fa;
+  height: 100%;
+  width: 100%
+}
+.headbg{
+  width: 100%;
+  display: flex;
+  align-content:center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 34rpx;
+  padding-bottom: 32rpx;
+}
+.avatar{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius:50%;
+  overflow: hidden;
+  margin: 20rpx auto 10rpx
+}
+.avatar image{
+  width: 100%;
+  height: 100%
+}
+.dataSet{
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  font-size: 24rpx
+}
+.dataList{
+  flex: 1;
+  border-bottom: 1px solid #f5f6fa;
+  font-size: 24rpx;
+  color: #3e3e3e;
+  height: 120rpx;
+  line-height: 120rpx
+}
+.dataList navigator{
+  padding: 0rpx 21rpx 0rpx 30rpx;
+  display: flex;
+  align-items:center;
+  text-align: right
+}
+.dataList .iconleft{
+  width:50rpx;
+  height:50rpx
+}
+.dataList .iconright{
+  width: 19rpx;
+  height: 33rpx;
+}
+.dataList text{
+  font-size: 24rpx;
+  margin-left: 50rpx
+}
+.logoing-out{
+  width: 585rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #EA8383;
+  box-shadow: 0 1px 15px 0 rgba(0,0,0,0.15);
+  border-radius: 100px; 
+  text-align: center;
+  margin: 58rpx auto 0rpx
+}
+.logoing-out text{
+  color: #fff;
+  font-size:24rpx;
+}

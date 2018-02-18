@@ -1,0 +1,54 @@
+<!--联系我们页面-->
+<view class="container">
+  <view class="progress">
+    <view class="progressPic">
+      <image src='../../images/progress.png'></image>
+    </view>
+    <view class="progressText">
+      <text class="currentProgress">填写资料</text>
+      <text>接受反馈</text>
+      <text>反馈处理</text>
+    </view>
+  </view>
+  <view class="write">
+    <view class="writeTitle">
+      <text>请填写您的联系方式 ，将会尽快与您联系</text>
+    </view>
+    <view class="writeInformation">
+      <text>Name</text>
+      <input type="text" placeholder='请输入您的名字 '></input>
+    </view>
+    <view class="writeInformation">
+      <text>Phone</text>
+      <input type='number' placeholder='请输入您的手机号 '></input>
+    </view> 
+  </view>
+
+
+  <view class="write read">
+    <view class="writeTitle">
+      <text>您也可直接联系我们的工作人员</text>
+    </view>
+    <block wx:for-items="{{navItems}}" wx:key="navItems">
+      <view>
+        <view class="writeInformation">
+          <text>客服一 ：</text>
+          <input type="text" value='{{item.name}}' disabled="true"></input>
+        </view>
+        <view class="writeInformation">
+          <text>联系电话</text>
+          <input type='number' id='{{item.contact}}' readonly value='{{item.contact}}'  bindtap="calling" disabled="true"></input>
+        </view> 
+        <view class="writeInformation">
+          <text>客服编号：</text>
+          <input type="text" value='{{item.id}}' disabled="true"></input>
+        </view>
+      </view>
+    </block> 
+  </view>
+
+  <view class="changeBtn">
+    <text class="change-btn" bindtap="changeBtnClick">提交</text>
+    <image src="../../images/Rectangle .png"></image>
+  </view>
+</view>

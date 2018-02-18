@@ -1,0 +1,30 @@
+<!--账号信息页面-->
+<view class="container">
+  <view class="title">账号信息</view>
+  <view class="changeAvatar">
+    <view class="infotext" bindtap="setPhotoInfo">
+      <image class="userinfo-avatar" src="{{imgUrl}}" background-size="cover"></image>
+    </view>
+    <text class="name">{{name}}</text>
+  </view>
+  <view class="changeInformation">
+    <view class="informationList">
+      <text class="subHeader">Phone</text>
+      <input type='number' class="phone" value="{{phoneNumber}}" disabled='false'></input>
+      <view class="line"></view>
+    </view>
+    <view class="informationList">
+      <text class="subHeader">Name</text>
+      <input type='number' class="phone" value="{{name}}"bindinput="nickInput" ></input>
+      <view class="line"></view>
+    </view>
+    <view class="informationList">
+      <text class="subHeader">Sponsor</text>
+      <input type='number' class="phone" value="{{sponsor}}" disabled='false'></input>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view class="changeBtn">
+      <text class="change-btn" bindtap="updateBtnClick">修改信息</text>
+    </view>
+</view>

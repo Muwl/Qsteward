@@ -1,0 +1,45 @@
+<!--账号信息页面-->
+<view class="container">
+  <view class="title">机构用户信息完善</view>
+  <view class='changeInformation'>
+    <view class="informationList">
+      <text class="subHeader">机构名称</text>
+      <input type='tetx' class="phone" placeholder='请输入机构名称' bindinput="companyNameInput"></input>
+      <view class="line"></view>
+    </view>
+    <view class="informationList">
+      <text class="subHeader">姓名</text>
+      <input type='tetx' class="phone" placeholder='请输入姓名'  bindinput="nameInput"></input>
+      <view class="line"></view>
+    </view>
+    <view class="informationList">
+      <text class="subHeader">身份证号</text>
+      <input type='tetx' class="phone" placeholder='请输入身份证号' bindinput="cardIdInput"></input>
+      <view class="line"></view>
+    </view>
+    <view class="informationList">
+      <text class="subHeader">部门</text>
+      <input type='tetx' class="phone" placeholder='请输入部门' bindinput="departmentInput"></input>
+      <view class="line"></view>
+    </view>
+    <view class="informationList">
+      <text class="subHeader">职务</text>
+      <input type='tetx' class="phone" placeholder='请输入职务' bindinput="jobInput"></input>
+      <view class="line"></view>
+    </view>
+    <view class="informationList">
+      <text class="subHeader">手机号</text>
+      <input type='number' class="phone" placeholder='请输入手机号' bindinput="phoneInput"></input>
+      <view class="line"></view>
+    </view>
+    <view class="informationList">
+      <text class="subHeader">地址</text>
+      <input type='tetx' class="phone" placeholder='请输入详细地址' bindinput="addressInput"></input>
+      <view class="line"></view>
+    </view>
+  </view>
+  <view class="changeBtn">
+    <text class="change-btn" bindtap="changeBtnClick">提交</text>
+    <image src="../../images/Rectangle .png"></image>
+  </view>
+</view>

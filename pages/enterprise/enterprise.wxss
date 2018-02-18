@@ -1,0 +1,68 @@
+.container{
+  padding-bottom:80rpx
+}
+.title{
+  font-size: 32rpx;
+  color: #000000;
+  padding: 35rpx 0rpx 0rpx 40rpx
+}
+.changeInformation{
+  display: flex;
+  flex-direction: column;
+  margin: 40rpx 60rpx 0rpx 60rpx;
+}
+.informationList{
+  flex: 1;
+  flex-direction: column;
+  margin-bottom:40rpx
+}
+.subHeader{
+  font-size: 24rpx;
+  color: #ADC6FF;
+}
+.phone{
+  flex: 1;
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  color: #000000;
+  margin:12rpx 0rpx 12rpx 0rpx;
+  line-height: 24rpx
+}
+.line{
+  flex: 1;
+  height: 1rpx;
+  opacity: .5;
+  border-bottom: 1px solid #E3EDF3;
+}
+.changeBtn{
+  width: 585rpx;
+  height: 88rpx;
+  background: #8392EA;
+  box-shadow: 0 1px 15px 0 rgba(0,0,0,0.15);
+  border-radius: 100px;
+  line-height: 88rpx;
+  margin:50rpx auto 0rpx;
+  position: relative
+}
+.change-btn{
+  display: block;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+.changeBtn image{
+  width: 16rpx;
+  height: 27rpx;
+  position: absolute;
+  right: 33rpx;
+  top:31rpx
+}
+.chooseHelp{
+  display: flex;
+  justify-content:space-between;
+  font-family: PingFangSC-Medium;
+  font-size:30rpx;
+  color: #8C959F;
+  line-height: 64rpx;
+}

@@ -1,0 +1,62 @@
+<!--我的申购中点击筛选页面-->
+<view class="container">
+  <view class="mysgListSearch">
+    <!--交易类型-->
+    <view class="screenList">
+      <view class="screenlist-title">
+        <text>交易类型</text>  
+      </view>
+      <view class="screenlist-content">
+        <view class="itemContent">
+          <view class="itemBox">
+            <block  wx:for="{{transPicker}}"  wx:key="transPicker">
+              <view class="scrollViewItem" bindtap="choice" id="{{index}}" style="{{index== id?'background:#7181E0;color: #fff;':'baciground:#F4F4F4;color: #8C959F'}}">{{item.text}}</view>
+            </block>  
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--信息有效期-->
+    <view class="screenList">
+      <view class="screenlist-title">
+        <text>信息有效期</text>
+      </view>
+      <view class="screenlist-content">
+        <view class="itemContent">
+          <view class="dataTime">
+            <picker mode="date" value="{{stardate}}" bindchange="dataDateChange" id="starDate">
+              <view class="picker">
+              {{stardate}}
+              </view>
+            </picker>
+            <view class="line"></view>
+            <picker mode="date" value="{{enddate}}" bindchange="dataDateChange"  id="endDate">
+              <view class="picker">
+              {{enddate}}
+              </view>
+            </picker>
+          </view>  
+        </view>
+      </view>
+    </view>
+    <!--审核状态-->
+    <view class="screenList">
+      <view class="screenlist-title">
+        <text>审核状态</text>  
+      </view>
+      <view class="screenlist-content">
+        <view class="itemContent">
+          <view class="itemBox">
+            <block  wx:for="{{state}}"  wx:key="state">
+              <view class="scrollViewItem" bindtap="choiceState" id="{{index}}" style="{{index== syayeId?'background:#7181E0;color: #fff;':'baciground:#F4F4F4;color: #8C959F'}}">{{item.text}}</view>
+            </block>  
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="sellfloorScreenBtn">
+    <button form-type='reset' class="reset">重置</button>
+    <button form-type='submit' class="submitsure" bindtap='sure'>确定</button>
+  </view>  
+</view>

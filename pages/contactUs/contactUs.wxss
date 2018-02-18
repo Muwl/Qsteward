@@ -1,0 +1,118 @@
+.progress{
+  width: 600rpx;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30rpx;
+  margin: 0 auto
+}
+.progressPic{
+  display: flex;
+  flex: 1;
+  justify-content:center;
+  align-items:center;
+}
+.progress image{
+  width: 540rpx;
+  height: 40rpx;
+  margin-bottom: 14rpx
+}
+.progressText{
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #8C959F;
+  letter-spacing: 2px;
+  justify-content:space-between;
+  align-items:center
+}
+.progressText text{
+  display: inline-block
+}
+.progressText text.currentProgress{
+  color: #ADC6FF
+}
+.write{
+  display: flex;
+  flex-direction: column;
+  margin:33rpx 15rpx 0rpx
+}
+.writeTitle{
+  flex: 1;
+  height: 106rpx;
+  background: #F4F4F4;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom:1px solid #E7E7E7;
+}
+.writeTitle text{
+  font-family: PingFangSC;
+  font-size: 24rpx;
+  color: #ADC6FF;
+  letter-spacing: 2.18px;
+  line-height: 106rpx;
+  margin-left: 40rpx
+}
+.writeInformation{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:space-between;
+  padding: 41rpx 0rpx 41rpx;
+  border-bottom:1px solid #E7E7E7;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  color: #8C959F;
+  line-height: 42rpx;
+}
+.writeInformation text{
+  margin-left: 40rpx;
+}
+.writeInformation input{
+  width: 235rpx;
+  height: 44rpx;
+  opacity: 0.8;
+  font-size: 30rpx;
+  color: #000000;
+  line-height: 44rpx;
+  margin-right: 44rpx;
+  text-align: right
+}
+.read{
+  margin:0rpx 15rpx 0rpx;
+}
+.read .writeTitle{
+  border-radius: 0px;
+}
+.changeBtn{
+  width: 585rpx;
+  height: 88rpx;
+  background: #8392EA;
+  box-shadow: 0 1px 15px 0 rgba(0,0,0,0.15);
+  border-radius: 100px;
+  line-height: 88rpx;
+  margin:80rpx auto 60rpx;
+  position: relative
+}
+.change-btn{
+  display: block;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+.changeBtn image{
+  width: 16rpx;
+  height: 27rpx;
+  position: absolute;
+  right: 33rpx;
+  top:31rpx
+}
+.chooseHelp{
+  display: flex;
+  justify-content:space-between;
+  font-family: PingFangSC-Medium;
+  font-size:30rpx;
+  color: #8C959F;
+  line-height: 64rpx;
+}

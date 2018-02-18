@@ -1,0 +1,25 @@
+.more{
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx 20rpx;
+}
+.moreList{
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  flex: 1;
+  margin-bottom: 20rpx;
+  padding-bottom: 18rpx;
+  border-bottom: 1px solid #E7E7E7;
+}
+.moreList text{
+  font-size:30rpx;
+}
+.moreList switch{
+  padding-top:8rpx;
+  transform: scale(.8)
+}
+.moreList:last-child{
+  border-bottom: 0px solid  #E7E7E7;
+}

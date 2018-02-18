@@ -1,0 +1,42 @@
+<!--个人中心-->
+<view class="container userBox">
+  <view class="headbg">
+     <navigator url='../account/account'>
+    <view class="avatar"><image src="{{usericon}}"></image></view>
+    <text>{{username}}</text>
+    </navigator>
+  </view> 
+  <view class="dataSet">
+    <view class="dataList">
+      <navigator url='../account/account'>
+        <image src="../../images/information.png" class="iconleft"></image>
+        <text>账号信息</text>
+        <image src="../../images/Rectangle .png" class="iconright"></image>
+      </navigator>
+    </view>
+    <view class="dataList">
+      <navigator url='../password/password'>
+        <image src="../../images/password.png" class="iconleft"></image>
+        <text>修改密码</text>
+        <image src="../../images/Rectangle .png" class="iconright"></image>
+      </navigator>
+    </view>
+    <view class="dataList">
+      <navigator bindtap="addUserDetail">
+        <image src="../../images/perfect.png" class="iconleft"></image>
+        <text>完善信息</text>
+        <image src="../../images/Rectangle .png" class="iconright"></image>
+      </navigator>
+    </view>
+    <view class="dataList">
+      <navigator>
+        <image src="../../images/save_code.png" class="iconleft"></image>
+        <text>我的保荐码</text>
+        <image src="../../images/Rectangle .png" class="iconright"></image>
+      </navigator>
+    </view>
+  </view> 
+  <view class="logoing-out">
+      <text class="outn-btn" bindtap="loginOutClick">退出登录登录</text>
+    </view>
+</view>

@@ -1,0 +1,16 @@
+<!--我要申购-->
+<view class="container">
+  <view class="contentType">
+    <block wx:for-items="{{initUrl}}" wx:key="initUrl">
+      <view class="contentList">
+        <view id='{{index}}' class="everycontent" bindtap="itemBtnClick">
+          <image src='{{item.img}}' class="typeImage" mode="aspectFill"></image>
+          <text class="texta">{{item.title}}</text>
+          <text class="textb">{{item.titleEn}}</text>
+        </view>
+      </view>  
+    </block> 
+
+    <button type="default" class='seemore' bindtap='seemore'>我的申购</button>
+  </view>
+</view>

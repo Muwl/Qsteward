@@ -1,0 +1,9 @@
+<!--关注模块-->
+<view class="container">
+  <view class="more">
+    <view class="moreList"  wx:for="{{init}}"  wx:key="init" >
+      <text>{{item.name}}</text> 
+      <switch bindchange="switchChange" checked='{{item.checked}}' id='{{index}}'/>
+    </view>
+  </view>
+</view>

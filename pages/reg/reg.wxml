@@ -1,0 +1,56 @@
+<!--登录页面-->
+<view class="container regPage">
+  <view class="logoNew">
+    <view class="textlogo"><text>注册</text></view>
+    <view class="login-item">
+      <view class="login-item-info">Phone Number</view>
+      <view class="login-item-input">
+        <image src="../../images/phone_icon.png" class="leftPic"></image>
+        <input type='number' bindinput="usernameInput" name="userName" placeholder="请输入您的手机号"/>
+      </view>
+    </view>
+    <view class="login-item">
+      <view class="login-item-info">Password</view>
+      <view class="login-item-input">
+        <image src="../../images/password_icon.png" class="leftPic"></image>
+        <input password="true" bindinput="passwordInput" name="userPwd" placeholder="请输入密码"/>
+        <view class='seePassword'>
+          <image src="../../images/show_icon.png"></image>
+          <text>Show</text>
+        </view>
+      </view>
+    </view>
+    <view class="login-item">
+      <view class="login-item-info">Confirm the password</view>
+      <view class="login-item-input">
+        <image src="../../images/password_icon.png" class="leftPic"></image>
+        <input password="true" bindinput="passwordReInput" name="userRePwd" placeholder="请输入密码"/>
+        <view class='seePassword'>
+          <image src="../../images/show_icon.png"></image>
+          <text>Show</text>
+        </view>
+      </view>
+    </view>
+    <view class="login-item verify-code">
+      <view class="login-item-info">Verification Code</view>
+      <view class="login-item-input">
+        <image src="../../images/code_icon.png" class="leftPic"></image>
+        <input type='number' placeholder="请输入验证码"  bindinput="codeInput"/>
+        <text class="clickGain" bindtap="getCodeBtnClick">{{codeBtnText}}</text>
+      </view>
+    </view>
+    <view class="login-item">
+      <view class="login-item-info">Recommendation code</view>
+      <view class="login-item-input">
+        <image src="../../images/code_icon.png" class="leftPic"></image>
+        <input placeholder="推荐码" bindinput="recommendInput"/>
+      </view>
+    </view>
+    <view class="login-item bottom">
+      <text class="login-btn" bindtap="regBtnClick">点击注册</text>
+    </view>
+  </view>
+  <view class="orWidth">
+    <view class="goRegister"> 已经有账号了？ <navigator url="../login/login"><text>点击登录 </text></navigator> </view>
+  </view>
+</view>
