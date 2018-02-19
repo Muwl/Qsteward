@@ -27,6 +27,7 @@
     "pages/userinfo/userinfo",
     "pages/enterprise/enterprise",
     "pages/capital/capital",
+    "pages/capitalDetail/capitalDetail",
     "pages/foreign/foreign",
     "pages/certificate/certificate",
     "pages/deposit/deposit",
