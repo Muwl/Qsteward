@@ -9,7 +9,7 @@ Page({
       {value: 'YF',text: '运费'}
     ],
     state: [
-      { text: '全部', v:'all' },
+      { text: '全部', v:'' },
       { text: '申购中', v:'1' },
       { text: '申购成功', v:'2' },
       { text: '申购失败', v:'3' }
@@ -59,24 +59,40 @@ Page({
         break;
     }
   },
+
   //点击确定
-  sure:function(e){
-    var that=this;
-    var user = wx.getStorageSync('user');
-    if (that.data.id =="-1") {
+  sure: function (e) {
+    var self = this;
+    console.log('dianji==========' + self.data.id);
+
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2]; //上一个页面
+
+    if (self.data.id == null || self.data.id == '' || self.data.id < 0) {
       wx.showToast({
-        title: '请选择一个交易类型',
-        icon: "none"
+        title: '请选择交易类型',
+        icon: 'none'
       })
-      return
+      return;
     }
-    var starDate = that.data.stardate; //开始时间
-    var endDate = that.data.enddate;  //结束时间
-    var type1 = that.data.state[that.data.syayeId].v //审核状态
-    var type3 = that.data.transPicker[that.data.id].value //交易类型
-    var type3name = that.data.transPicker[that.data.id].text; //交易类型
-    wx.navigateTo({
-      url: '../mysgList/mysgList?starDate=' + starDate + '&endDate=' + endDate + '&type1=' + type1 + '&type3=' + type3,
+    prevPage.setData({
+      showType: self.data.transPicker[self.data.id].value,
+      startTime: self.data.stardate,
+      endTime: self.data.enddate,
+      applypr: self.data.state[self.data.syayeId].v,
+    })
+    wx.navigateBack({
+      delta: -1,
+    })
+  },
+  
+  resert: function (e) {
+    var self = this;
+    this.setData({
+      showType: '',
+      stardate: '',
+      enddate: '',
+      syayeId: 0,
     })
   }
 })

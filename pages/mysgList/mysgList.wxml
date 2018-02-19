@@ -1,99 +1,115 @@
-<!--我的申购页面--> 
-<view class="container">
+<!--点击选择类型-->
+  <include src="../../utils/refresh/refreshHeaderView.wxml"/>
+<include src="../../utils/refresh/loadMoreFooterView.wxml"/>
+<scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight:-loadMoreHeight}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" > 
+<view class="container" style="width:100%;height:100%" bindtouchmove="move">
   <!--资金-->
-  <view class="mui-table" wx:if="{{showType=='ZJ'}}">
+  <block wx:for-items="{{navItems}}" wx:key="navItems"  wx:if="{{showType=='ZJ'}}">
+  <view class="mui-table">
     <view class="tableList tableListTitle">
-      <view>报盘方：深圳君创zj{{showType}}</view>
-      <view>状态：申购中</view>
+      <view>报盘方：{{item.our}}</view>
+      <view>状态：{{item.status}}</view>
     </view>
     <view class="tableList">
-      <view>方向：<text>融入</text></view>
-      <view>利率：<text>8%</text></view>
+      <view>方向：<text>{{item.direction}}</text></view>
+      <view>利率：<text>{{item.rate}}</text></view>
     </view>
     <view class="tableList">
-      <view>期限：1Y</view>
-      <view>金额（亿）：1</view>
+      <view>期限：{{item.timeLimit}}</view>
+      <view>金额（亿）：{{item.money}}</view>
     </view>
   </view>
+  </block>
   <!--外汇-->
-  <view class="mui-table" wx:elif="{{showType=='WH'}}">
+  <block wx:for-items="{{navItems}}" wx:key="navItems"  wx:if="{{showType=='WH'}}">
+  <view class="mui-table">
     <view class="tableList tableListTitle">
-      <view>报盘方：深圳君创wh</view>
-      <view>状态：申购中</view>
+      <view>报盘方：{{item.our}}</view>
+      <view>状态：{{item.status}}</view>
     </view>
     <view class="tableList">
-      <view>方向：<text>融入</text></view>
-      <view>汇率：<text>8%</text></view>
+      <view>方向：<text>{{item.direction}}</text></view>
+      <view>汇率：<text>{{item.outRate}}</text></view>
     </view>
     <view class="tableList">
-      <view>期限：1Y</view>
-      <view>金额（万）：1</view>
+      <view>期限：{{item.timeLimit}}</view>
+      <view>金额（万）：{{item.money}}</view>
     </view>
   </view>
+    </block>
   <!--存款--> 
-  <view class="mui-table" wx:elif="{{showType=='CK'}}">
+    <block wx:for-items="{{navItems}}" wx:key="navItems"  wx:if="{{showType=='CK'}}">
+  <view class="mui-table" >
     <view class="tableList tableListTitle">
-      <view>机构简称：深圳君创ck</view>
-      <view>状态：申购中</view>
+      <view>机构简称：{{item.orgAbbreviation}}</view>
+      <view>状态：{{item.status}}</view>
     </view>
     <view class="tableList">
-      <view>方向：<text>融入</text></view>
-      <view>利率：<text>8%</text></view>
+      <view>方向：<text>{{item.direction}}</text></view>
+      <view>利率：<text>{{item.rate}}</text></view>
     </view>
     <view class="tableList">
-      <view>期限：1Y</view>
-      <view>金额（亿）：1</view>
+      <view>期限：{{item.timeLimit}}</view>
+      <view>金额（亿）：{{item.money}}</view>
     </view>
   </view>
+  </block>
   <!--代开证-->
-  <view class="mui-table" wx:elif="{{showType=='DKZ'}}">
+  <block wx:for-items="{{navItems}}" wx:key="navItems"  wx:if="{{showType=='DKZ'}}">
+  <view class="mui-table" >
     <view class="tableList tableListTitle">
-      <view>报盘方：深圳君创dkz</view>
-      <view>状态：申购中</view>
+      <view>报盘方：{{item.our}}</view>
+      <view>状态：{{item.status}}</view>
     </view>
     <view class="tableList">
-      <view>方向：<text>融入</text></view>
-      <view>代理费：<text>8%</text></view>
+      <view>方向：<text>{{item.direction}}</text></view>
+      <view>代理费：<text>{{item.agency}}</text></view>
     </view>
     <view class="tableList">
-      <view>期限：1Y</view>
-      <view>金额（万）：1</view>
+      <view>期限：{{item.timeLimit}}</view>
+      <view>金额（万）：{{item.money}}</view>
     </view>
   </view>
+  </block>
   <!--商品-->
-  <view class="mui-table" wx:elif="{{showType=='SP'}}">
+  <block wx:for-items="{{navItems}}" wx:key="navItems"  wx:if="{{showType=='SP'}}">
+  <view class="mui-table" >
     <view class="tableList tableListTitle">
-      <view>商品名称：深圳君创sp</view>
-      <view>状态：申购中</view>
+      <view>商品名称：{{item.commodityName}}</view>
+      <view>状态：{{item.status}}</view>
     </view>
     <view class="tableList">
-      <view>报盘方：<text>融入</text></view>
-      <view>方向：<text>8%</text></view>
+      <view>报盘方：<text>{{item.our}}</text></view>
+      <view>方向：<text>{{item.direction}}</text></view>
     </view>
     <view class="tableList">
-      <view>品种：1Y</view>
-      <view>价格：1</view>
+      <view>品种：{{item.type}}</view>
+      <view>价格：{{item.price}}</view>
     </view>
   </view>
+    </block>
   <!--运费-->
-  <view class="mui-table" wx:elif="{{showType =='YF'}}">
+  <block wx:for-items="{{navItems}}" wx:key="navItems"  wx:if="{{showType=='YF'}}">
+  <view class="mui-table" >
     <view class="tableList tableListTitle">
-      <view>运输类型：深圳君创</view>
-      <view>状态：申购中</view>
+      <view>运输类型：{{item.transportType}}</view>
+      <view>状态：{{item.status}}</view>
     </view>
     <view class="tableList">
-      <view>报盘方：<text>融入</text></view>
-      <view>方向：<text>8%</text></view>
+      <view>报盘方：<text>{{item.our}}</text></view>
+      <view>方向：<text>{{item.direction}}</text></view>
     </view>
     <view class="tableList">
-      <view>数量（万吨）：1Y</view>
-      <view>价格（元/吨）：1</view>
+      <view>数量（万吨）：{{item.number}}</view>
+      <view>价格（元/吨）：{{item.price}}</view>
     </view>
   </view>
+  </block>
+  </view>
+  </scroll-view>
   <view class="changeBtn"> 
-      <navigator url='../mysgListSearch/mysgListSearch'>
-        <text class="change-btn" bindtap="changeBtnClick">点击进行筛选</text>
-        <image src="../../images/Rectangle .png"></image>
-      </navigator>  
-    </view>
-</view>
+    <navigator url='../issueListSeach/issueListSeach'>
+      <text class="change-btn" bindtap="changeBtnClick">点击进行筛选</text>
+      <image src="../../images/Rectangle .png"></image>
+    </navigator>  
+  </view>

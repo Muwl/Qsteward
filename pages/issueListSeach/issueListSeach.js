@@ -9,14 +9,14 @@ Page({
       { v: 'YF', text: '运费' }
     ],
     state: [
-      { text: '全部', v: 'all' },
+      { text: '全部', v: '' },
       { text: '待审核', v: '0' },
       { text: '未通过', v: '1' },
       { text: '已发布', v: '2' },
       { text: '确认申购', v: '3' }
     ],
     information: [
-      { text: '全部', v: 'all' },
+      { text: '全部', v: '' },
       { text: '展示', v: '1' },
       { text: '下架', v: '2' }
     ],
@@ -26,14 +26,6 @@ Page({
     syayeId: 0,
     informationId:"0"
   },
-  onLoad: function (options) { },
-  onReady: function () { },
-  onShow: function () { },
-  onHide: function () { },
-  onUnload: function () { },
-  onPullDownRefresh: function () { },
-  onReachBottom: function () { },
-  onShareAppMessage: function () { },
   //交易类型
   choice: function (e) {
     var id = e.currentTarget.id;  //获取自定义的ID值  
@@ -75,23 +67,42 @@ Page({
   },
   //点击确定
   sure: function (e) {
-    var that = this;
-    var user = wx.getStorageSync('user');
-    if (that.data.id == "-1") {
-      wx.showToast({
-        title: '请选择一个交易类型',
-        icon: "none"
-      })
-      return
+    var self = this;
+    console.log('dianji==========' + self.data.id);
+
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2]; //上一个页面
+
+    if(self.data.id==null || self.data.id=='' || self.data.id<0){
+        wx.showToast({
+          title: '请选择交易类型',
+          icon:'none'
+        })
+        return;
     }
-    var starDate = that.data.stardate; //开始时间
-    var endDate = that.data.enddate;  //结束时间
-    var type1 = that.data.state[that.data.syayeId].v //审核状态
-    var type2 = that.data.state[that.data.informationId].v //信息状态
-    var type3 = that.data.transPicker[that.data.id].v //交易类型
-    var type3name = that.data.transPicker[that.data.id].text; //交易类型
-    wx.navigateTo({
-      url: '../mysgList/mysgList?starDate=' + starDate + '&endDate=' + endDate + '&type1=' + type1 + '&type2=' + type2 + '&type3=' + type3,
+    prevPage.setData({
+      showType: self.data.transPicker[self.data.id].v,
+      startTime: self.data.stardate,
+      endTime: self.data.enddate,
+      status: self.data.state[self.data.syayeId].v,
+      releaseType: self.data.state[self.data.informationId].v,
+    })
+    wx.navigateBack({
+      delta: -1,
+    })
+  },
+
+   resert: function (e) {
+     console.log('dianji111==========');
+    var self = this;
+    this.setData({
+      showType:'',
+      stardate: '',
+      enddate: '',
+      id: -1,
+      syayeId: 0,
+      informationId: "0"
     })
   }
+
 })
