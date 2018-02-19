@@ -11,6 +11,6 @@
       </view>  
     </block> 
 
-    <button type="default" class='seemore' bindtap='seemore'>我的申购</button>
+    <navigator class="listHref" url='../mysgList/mysgList'><button type="default" class='seemore' bindtap='seemore'>我的申购</button></navigator>
   </view>
 </view>

@@ -1,4 +1,4 @@
-<!--我的申购页面--> 
+<!--点击选择类型-->
 <view class="container">
   <!--资金-->
   <view class="mui-table" wx:if="{{showType=='ZJ'}}">
@@ -91,9 +91,9 @@
     </view>
   </view>
   <view class="changeBtn"> 
-      <navigator url='../mysgListSearch/mysgListSearch'>
-        <text class="change-btn" bindtap="changeBtnClick">点击进行筛选</text>
-        <image src="../../images/Rectangle .png"></image>
-      </navigator>  
-    </view>
+    <navigator url='../issueListSeach/issueListSeach'>
+      <text class="change-btn" bindtap="changeBtnClick">点击进行筛选</text>
+      <image src="../../images/Rectangle .png"></image>
+    </navigator>  
+  </view>
 </view>

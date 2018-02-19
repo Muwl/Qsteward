@@ -78,4 +78,8 @@
       </view>
     </view>
   </view>
+  <view class="changeBtn">
+    <text class="change-btn" bindtap="changeBtnClick">提交</text>
+    <image src="../../images/Rectangle .png"></image>
+  </view>
 </view>

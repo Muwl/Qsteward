@@ -1,41 +1,34 @@
-.transDetail{
+.container{
+  padding-bottom: 40rpx;
+}
+.mui-table{
   display: flex;
   flex-direction: column;
-  margin: 30rpx 15rpx;
+  margin: 50rpx 20rpx 0rpx;
+  padding: 30rpx 35rpx;
   background: #FFFFFF;
   box-shadow: 0 1px 15px 0 rgba(0,0,0,0.10);
   border-radius: 6px;
-  font-size: 28rpx;
-  color: #080808;
+}
+.tableList{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content:space-between;
   font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #7B7B7B;
+  margin-bottom: 10rpx;
 }
-.transDetailList{
-  flex: 1;
-  height:86rpx;
-  line-height:86rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
+.tableListTitle{
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #080808;
 }
-.title{
-  border-bottom: 1px solid  #080808;
-}
-.left{
-  margin-left: 30rpx;
-}
-.right{
-  margin-right: 30rpx;
-}
-.content{
-  flex: 1;
-  margin: 0rpx 30rpx;
-  border-bottom: 1px solid  #ccc;
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-}
-.transDetailList:last-child .content{
-  border-bottom: 0px solid  #ccc;
+.tableList text{
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #FF0000;
 }
 .changeBtn{
   width: 585rpx;
@@ -44,8 +37,11 @@
   box-shadow: 0 1px 15px 0 rgba(0,0,0,0.15);
   border-radius: 100px;
   line-height: 88rpx;
-  margin:30rpx auto 60rpx;
-  position: relative
+  margin:0rpx auto;
+  position: fixed;
+  bottom: 60rpx;
+  left: 0;
+  right: 0;
 }
 .change-btn{
   display: block;

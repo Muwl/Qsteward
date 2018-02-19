@@ -20,7 +20,7 @@
       </navigator>
     </view>
     <view class="btnClick">
-      <button type="default" class='seemore' bindtap='seemore'>我的发布</button>
+       <navigator class="listHref" url='../issueList/issueList'><button type="default" class='seemore' bindtap='seemore'>我的发布</button></navigator>
       <navigator class="listHref" url='../mysgList/mysgList'><button type="default" class='seemore'>
         我的申购
       </button></navigator>

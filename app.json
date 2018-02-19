@@ -1,8 +1,9 @@
 {
   "pages":[
-    "pages/transDetail/transDetail",
     "pages/index/index",
     "pages/business/business",
+    "pages/issueList/issueList",
+    "pages/issueListSeach/issueListSeach",
     "pages/mysgList/mysgList",
     "pages/mysgListSearch/mysgListSearch",
     "pages/transSala/transSala",
@@ -28,7 +29,8 @@
     "pages/certificate/certificate",
     "pages/deposit/deposit",
     "pages/commodity/commodity",
-    "pages/freight/freight"
+    "pages/freight/freight",
+    "pages/transDetail/transDetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

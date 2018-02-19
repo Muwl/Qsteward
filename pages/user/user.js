@@ -13,6 +13,7 @@ Page({
     }
   },
   onReady: function () {
+    this.onShow();
   },
 
   /**

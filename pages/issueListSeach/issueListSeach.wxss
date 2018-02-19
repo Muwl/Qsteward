@@ -1,0 +1,100 @@
+.mysgListSearch{
+  display: flex;
+  flex-direction: column
+}
+.screenList{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding:40rpx 0rpx 40rpx;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+.screenlist-title{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content:space-between;
+  margin: 0rpx 20rpx 34rpx 40rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #000000;
+  letter-spacing: 0;
+}
+.itemContent{
+  display: flex;
+  flex-wrap:wrap;
+}
+.itemBox{
+  flex: 1;
+  margin: 0rpx 20rpx 0rpx 50rpx;
+  flex-wrap:wrap;
+}
+.scrollViewItem{
+  display: inline-block;
+  width:220rpx;
+  height: 80rpx;
+  background: #F4F4F4;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0rpx 5rpx 30rpx;
+}
+
+.scrollView:last-child{
+   margin: 0px 0px 0px 20rpx;
+}
+.dataTime{
+  display: flex;
+  flex: 1;
+  justify-content:center;
+  align-items:center;
+}
+.picker{
+  width: 266rpx;
+  height: 42rpx;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius:24rpx;
+  padding: 0rpx 8rpx;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  text-align: center
+}
+.screenlist-content .line{
+  width: 26rpx;
+  height: 2px;
+  background: #7081E0;
+  border-radius: 13px;
+  margin:0rpx 12rpx
+}
+.sellfloorScreenBtn{
+  display: flex;
+  flex-direction: row;
+  padding:60rpx 0rpx 50rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  letter-spacing: 2px;
+  line-height: 88rpx;
+  justify-content:center;
+}
+.reset{
+  width: 300rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: #000000;
+  border-radius: 100rpx;
+  margin: 0rpx 20rpx;
+  color: #FFFFFF;
+  opacity: 0.2
+}
+.submitsure{
+  width: 300rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: #8392EA;
+  border-radius: 100rpx;
+  margin: 0rpx 20rpx;
+  color: #FFFFFF;
+}
