@@ -71,7 +71,7 @@
     </view>
   </view>
   <view class="sellfloorScreenBtn">
-    <button form-type='reset' class="reset">重置</button>
-    <button form-type='submit' class="submitsure" bindtap='sure'>确定</button>
+    <button  class="reset" bindtap='resert'>重置</button>
+    <button  class="submitsure" bindtap='sure'>确定</button>
   </view>  
 </view>
