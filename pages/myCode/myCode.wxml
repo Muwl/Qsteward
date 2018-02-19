@@ -1,0 +1,29 @@
+<include src="../../utils/refresh/refreshHeaderView.wxml"/>
+<include src="../../utils/refresh/loadMoreFooterView.wxml"/>
+<!--我的保荐码--> 
+<scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight:-loadMoreHeight}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" >
+  <view style="width:100%;height:100%" bindtouchmove="move">
+    <block wx:for-items="{{itemDatas}}" wx:key="itemDatas">
+      <view class="mycode">
+        <view class="transDetailList copyNumber">
+          <view class="number">保荐码：<text>{{item.sponsorCode}}</text> </view>
+          <view class="copy" bindtap='clickCopy' id="{{index}}">复制</view>
+        </view>
+        <view class="transDetailList">
+          <view>申请日期：{{item.sponsorDate}} {{item.sponsorTime}}</view>
+          <view>状态：{{item.sponsorStatusText}}</view>
+        </view>
+      </view>
+    </block>
+  </view>    
+</scroll-view>
+<view class="clickApply" bindtap="modalinput">申请</view>
+<modal hidden="{{hiddenmodalput}}" title="请输入申请理由" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text'placeholder="请输入内容" auto-focus bindinput ="writeText"/>  
+</modal> 
+<view class="changeBtn">
+      <navigator url='../myCodeSearch/myCodeSearch'>
+        <text class="change-btn" bindtap="changeBtnClick">点击进行筛选</text>
+        <image src="../../images/Rectangle .png"></image>
+      </navigator>  
+</view>

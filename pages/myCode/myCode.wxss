@@ -1,0 +1,82 @@
+@import '../../utils/refresh/refreshView.wxss';
+ .mycode{
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx 15rpx;
+  background: #FFFFFF;
+  box-shadow: 0 1px 15px 0 rgba(0,0,0,0.10);
+  border-radius: 6px;
+  font-size: 28rpx;
+  color: #080808;
+  font-family: PingFangSC-Medium;
+  padding: 20rpx;
+}
+.transDetailList{
+  display: flex;
+  flex: 1;
+  padding:0rpx 15rpx 15rpx;
+  flex-direction: row;
+  font-family: PingFangSC-Medium;
+  font-size:30rpx;
+  color: #8e8f94;
+  justify-content:space-between;
+}
+.transDetailList .number text{
+  color: #FF0000;
+}
+.changeBtn{
+  width: 585rpx;
+  height: 88rpx;
+  background: #8392EA;
+  box-shadow: 0 1px 15px 0 rgba(0,0,0,0.15);
+  border-radius: 100px;
+  line-height: 88rpx;
+  margin:0rpx auto;
+  position: fixed;
+  bottom: 60rpx;
+  left: 0;
+  right: 0;
+}
+.change-btn{
+  display: block;
+  text-align: center;
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+.changeBtn image{
+  width: 16rpx;
+  height: 27rpx;
+  position: absolute;
+  right: 33rpx;
+  top:31rpx
+}
+.copyNumber{
+  justify-content: flex-start;
+}
+.copy{
+  width:80rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 40rpx;
+  margin-left: 30rpx;
+}
+.clickApply{
+  width: 584rpx;
+  height: 80rpx;
+  font-family:PingFangSC-Medium;
+  text-align: center;
+  border-radius:100px;
+  font-size: 24rpx;
+  position:fixed;
+  bottom:160rpx;
+  left:0;
+  right: 0;
+  margin: 0 auto;
+  color: #8C959F;
+  line-height:80rpx;
+  background: #F4F4F4;
+  letter-spacing: 2px;
+}

@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/myCode/myCode",
+    "pages/myCodeSearch/myCodeSearch",
     "pages/business/business",
     "pages/issueList/issueList",
     "pages/issueListSeach/issueListSeach",

@@ -1,6 +1,6 @@
 <!--资金交易大厅-->
   <include src="../../utils/refresh/refreshHeaderView.wxml"/>
-<include src="../../utils/refresh/loadMoreFooterView.wxml"/>
+<include src="../../utils/refresh/loadMoreFooterView.wxml"/> 
 
 
 <scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight:-loadMoreHeight}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" > 

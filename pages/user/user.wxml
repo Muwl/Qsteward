@@ -29,7 +29,7 @@
       </navigator>
     </view>
     <view class="dataList">
-      <navigator>
+      <navigator url='../myCode/myCode'>
         <image src="../../images/save_code.png" class="iconleft"></image>
         <text>我的保荐码</text>
         <image src="../../images/Rectangle .png" class="iconright"></image>

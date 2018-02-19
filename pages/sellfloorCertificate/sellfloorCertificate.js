@@ -144,7 +144,7 @@ Page({
   },
 
 
-//获取只能标签
+//获取智能标签
   getLabel:function(){
     var self = this
     wx.showLoading({
@@ -184,7 +184,7 @@ Page({
         wx.hideLoading();
         self.setData({
           loading: false
-        })
+        }) 
       }
     })
   },
