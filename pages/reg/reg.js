@@ -27,17 +27,17 @@ var timer = function (that) {//验证码倒计时
 }
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     userName: '',
     userPwd: '',
     userRePwd:'',
     verificateCode:'',
     recommendCode: '',
-    codeBtnText:'点击接收'
+    codeBtnText:'点击接收',
+    showhide: true,
+    passwordStatus: "show",
+    showhide1: true,
+    passwordStatus1: "show"
   },
 
   //获取用户输入的用户名
@@ -289,5 +289,45 @@ Page({
       }
     })
   },
-
+  //点击显示或隐藏密码
+  seePassword: function (e) {
+    var that = this;
+    var statustex = this.data.passwordStatus;
+    if (statustex == "show") {
+      this.setData({
+        passwordStatus: "hide"
+      })
+    } else {
+      this.setData({
+        passwordStatus: "show"
+      })
+    }
+    this.setData({
+      showhide: !this.data.showhide
+    })
+  },
+  //点击显示或隐藏密码
+  seePassword1: function (e) {
+    var that = this;
+    var statustex = this.data.passwordStatus1;
+    if (statustex == "show") {
+      this.setData({
+        passwordStatus1: "hide"
+      })
+    } else {
+      this.setData({
+        passwordStatus1: "show"
+      })
+    }
+    this.setData({
+      showhide1: !this.data.showhide1
+    })
+  },
+  //点击登录跳转到登录页面
+  clickLogin:function(){
+    wx.redirectTo({
+      url: '../login/login',
+    });
+  }
+  
 })

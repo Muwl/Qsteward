@@ -25,15 +25,13 @@ var timer = function (that) {//验证码倒计时
 }
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: { 
     codeBtnText: '点击接收',
     phone:'',
     code:'',
     password:'',
+    showhide: true,
+    passwordStatus: "show"
   },
 
   usernameInput: function (e) {
@@ -195,5 +193,21 @@ Page({
     })
   },
 
-
+  //点击显示或隐藏密码
+  seePassword: function (e) {
+    var that = this;
+    var statustex = this.data.passwordStatus;
+    if (statustex == "show") {
+      this.setData({
+        passwordStatus: "hide"
+      })
+    } else {
+      this.setData({
+        passwordStatus: "show"
+      })
+    }
+    this.setData({
+      showhide: !this.data.showhide
+    })
+  }
 })

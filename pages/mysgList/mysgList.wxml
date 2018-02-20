@@ -2,7 +2,7 @@
   <include src="../../utils/refresh/refreshHeaderView.wxml"/>
 <include src="../../utils/refresh/loadMoreFooterView.wxml"/>
 <scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight:-loadMoreHeight}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" > 
-<view class="container" style="width:100%;height:100%" bindtouchmove="move">
+<view class="container" style="width:100%;height:100%;padding-bottom:5rpx" bindtouchmove="move">
   <!--资金-->
   <block wx:for-items="{{navItems}}" wx:key="navItems"  wx:if="{{showType=='ZJ'}}">
   <view class="mui-table">

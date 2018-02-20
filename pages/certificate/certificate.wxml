@@ -4,22 +4,24 @@
 
 
 <scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight:-loadMoreHeight}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" > 
-<view style="width:100%;height:100%" bindtouchmove="move">
+<view style="width:100%;height:100%;padding-bottom:5rpx;" bindtouchmove="move">
    <block wx:for-items="{{itemDatas}}" wx:key="itemDatas">
-    <view class="capitalList">
-      <view class="listPic"><image src="../../images/icon_1.png"></image></view>
-      <view class="listText">
-        <view class="listTextTitle">报盘方 ：{{item.our}}</view>
-        <view class='listTextContent'>
-          <view>方	  向 ：<text class="redText">{{item.direction}}</text></view>
-          <view>代 理 费： ：<text class="redText">{{item.agency}}</text></view>
+    <navigator  url='../certificateDetail/certificateDetail?id={{item.id}}'>
+        <view class="capitalList">
+          <view class="listPic"><image src="../../images/icon_1.png"></image></view>
+          <view class="listText">
+            <view class="listTextTitle">报盘方 ：{{item.our}}</view>
+            <view class='listTextContent'>
+              <view>方	  向 ：<text class="redText">{{item.direction}}</text></view>
+              <view>代 理 费： ：<text class="redText">{{item.agency}}</text></view>
+            </view>
+            <view class='listTextContent'>
+              <view>期	  限 ：<text>{{item.timeLimit}}</text></view>
+              <view>金额（万）：<text>{{item.money}}</text></view>
+            </view>
+          </view>
         </view>
-        <view class='listTextContent'>
-          <view>期	  限 ：<text>{{item.timeLimit}}</text></view>
-          <view>金额（万）：<text>{{item.money}}</text></view>
-        </view>
-      </view>
-    </view>
+    </navigator>    
     </block>
       </view>
     </scroll-view>

@@ -84,7 +84,7 @@
     </view>
  
     <!--金额-->
-    <view class="screenList">
+    <view class="screenList" wx:if="{{id==1}}">
       <view class="screenlist-title">
         <text>品质</text>
         <view class="currentPic"><image src="{{currentImgurl}}"></image></view>  

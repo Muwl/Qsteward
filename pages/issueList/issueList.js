@@ -8,9 +8,6 @@ var page = 1;
 var register = require('../../utils/refresh/refreshLoadRegister.js')
 
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
       showType:'',
       itemData:[],
@@ -69,8 +66,8 @@ Page({
               itemDatas: rdata.pager.lists
             })
           } else {
-            this.setData({
-              'itemDatas': this.data.list.concat(rdata.pager.lists)
+            self.setData({
+                itemDatas: self.data.itemDatas.concat(rdata.pager.lists)
             });
           }
         } else {

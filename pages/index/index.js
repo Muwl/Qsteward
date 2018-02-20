@@ -92,7 +92,7 @@ Page({
         img:'',
         index:0
       };
-      switch (data[i].joinType) {
+      switch (data[i].joinType) { 
         case 'ZJ':
           item.title ='资金';
           item.key ='capital';

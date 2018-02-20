@@ -70,8 +70,8 @@ Page({
               itemDatas: rdata.pager.lists
             })  
           }else{
-            this.setData({
-              'itemDatas': this.data.list.concat(rdata.pager.lists)
+            self.setData({
+              itemDatas: self.data.itemDatas.concat(rdata.pager.lists)
             });
           }
           register.loadFinish(self, true);

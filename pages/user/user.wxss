@@ -44,7 +44,8 @@ page{
   padding: 0rpx 21rpx 0rpx 30rpx;
   display: flex;
   align-items:center;
-  text-align: right
+  text-align: right;
+  position: relative
 }
 .dataList .iconleft{
   width:50rpx;
@@ -53,6 +54,9 @@ page{
 .dataList .iconright{
   width: 19rpx;
   height: 33rpx;
+  position: absolute;
+  right: 20rpx;
+  top:43rpx;
 }
 .dataList text{
   font-size: 24rpx;

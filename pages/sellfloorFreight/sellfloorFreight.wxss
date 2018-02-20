@@ -25,7 +25,8 @@
   align-items:center;
   justify-content:center;
   width: 44rpx;
-  height: 44rpx
+  height: 44rpx;
+  display: none
 }
 .currentPic image{
   width: 22rpx;

@@ -2,7 +2,7 @@
 <include src="../../utils/refresh/loadMoreFooterView.wxml"/>
 <!--我的保荐码--> 
 <scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight:-loadMoreHeight}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" >
-  <view style="width:100%;height:100%" bindtouchmove="move">
+  <view style="width:100%;height:100%;padding-bottom:5rpx" bindtouchmove="move">
     <block wx:for-items="{{itemDatas}}" wx:key="itemDatas">
       <view class="mycode">
         <view class="transDetailList copyNumber">

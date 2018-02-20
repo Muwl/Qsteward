@@ -1,0 +1,97 @@
+<!--申购详情--> 
+<view class="container">
+  <view class="transDetail">
+    <view class="title transDetailList">
+      <text class="left">{{sgName}}</text>
+      <text class="right">{{sgShow}}</text>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>机构简称</text>
+        <text>{{data.orgAbbreviation}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>方向</text>
+        <text>{{data.direction}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>时间</text>
+        <text>{{data.date}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>利率</text>
+        <text>{{data.rate}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>期限</text>
+        <text>{{data.timeLimit}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>金额（亿）</text>
+        <text>{{data.money}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>币种</text>
+        <text>{{data.currency}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>交易类型</text>
+        <text>{{data.transType}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>所在区域</text>
+        <text>{{data.home}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>资产规模</text>
+        <text>{{data.assets}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>不良率</text>
+        <text>{{data.DefectiveRate}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>监管评级</text>
+        <text>{{data.home}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>备注</text>
+        <text>{{data.note}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>有效期</text>
+        <text>{{data.expTime}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="changeBtn"  wx:if="{{data.status == null || data.status==''}}">
+    <text class="change-btn" bindtap="changeBtnClick">感兴趣</text>
+    <image src="../../images/Rectangle .png"></image>
+  </view>
+</view>

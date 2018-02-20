@@ -36,7 +36,7 @@
       </navigator>
     </view>
   </view> 
-  <view class="logoing-out">
-      <text class="outn-btn" bindtap="loginOutClick">退出登录登录</text>
+  <view class="logoing-out" bindtap="loginOutClick">
+      <text class="outn-btn">退出登录</text>
     </view>
 </view>

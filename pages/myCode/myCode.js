@@ -50,6 +50,10 @@ Page({
         wx.hideLoading();
         var rdata = result.data;
         if (rdata.code == 'success') {
+          if (rdata.sponsor == null && rdata.sponsor == '') {
+            register.loadFinish(self, true);
+            return;
+          }
            //设置页面申请状态
           if (rdata.sponsor != null && rdata.sponsor!=''){
             for (var i = 0; i < rdata.sponsor.length;i++){
@@ -65,8 +69,8 @@ Page({
               itemDatas: rdata.sponsor
             })
           } else {
-            this.setData({
-              'itemDatas': this.data.ponsor.concat(rdata.ponsor)
+            self.setData({
+              itemDatas: self.data.itemDatas.concat(rdata.sponsor)
             });
           }
           register.loadFinish(self, true);

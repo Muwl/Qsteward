@@ -144,7 +144,7 @@ Page({
         break;
     }
   },
-  //期限
+  //商品名称
   choice:function(e){
     var id = e.currentTarget.id;  //获取自定义的ID值  
     this.setData({

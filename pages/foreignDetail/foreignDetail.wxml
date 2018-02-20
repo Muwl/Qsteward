@@ -1,0 +1,79 @@
+<!--申购详情--> 
+<view class="container">
+  <view class="transDetail">
+    <view class="title transDetailList">
+      <text class="left">{{sgName}}</text>
+      <text class="right">{{sgShow}}</text>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>线上/线下</text>
+        <text>{{data.type}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>报盘方</text>
+        <text>{{data.our}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>方向</text>
+        <text>{{data.direction}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>汇率</text>
+        <text>{{data.outRate}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>期限</text>
+        <text>{{data.timeLimit}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>金额（亿）</text>
+        <text>{{data.money}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>币种</text>
+        <text>{{data.currency}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>交易类型</text>
+        <text>{{data.transType}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>对手范围</text>
+        <text>{{data.opponentRange}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>备注</text>
+        <text>{{data.note}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>有效期</text>
+        <text>{{data.expTime}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="changeBtn"  wx:if="{{data.status == null || data.status==''}}">
+    <text class="change-btn" bindtap="changeBtnClick">感兴趣</text>
+    <image src="../../images/Rectangle .png"></image>
+  </view>
+</view>

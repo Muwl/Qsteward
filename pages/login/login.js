@@ -8,7 +8,9 @@ Page({
    */
   data: {
     userName:'',
-    userPwd: ''
+    userPwd: '',
+    showhide:true,
+    passwordStatus:"show"
   },
 
   //获取用户输入的用户名
@@ -99,4 +101,21 @@ Page({
       }
     })
   },
+  //点击显示或隐藏密码
+  seePassword:function(e){
+    var that=this;
+    var statustex = this.data.passwordStatus;
+    if (statustex =="show"){
+      this.setData({
+        passwordStatus:"hide"
+      })
+    }else{
+      this.setData({
+        passwordStatus: "show"
+      })
+    }
+    this.setData({
+      showhide: !this.data.showhide
+    })
+  }
 })

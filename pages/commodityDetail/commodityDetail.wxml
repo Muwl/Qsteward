@@ -1,0 +1,91 @@
+<!--申购详情--> 
+<view class="container">
+  <view class="transDetail">
+    <view class="title transDetailList">
+      <text class="left">{{sgName}}</text>
+      <text class="right">{{sgShow}}</text>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>商品名称</text>
+        <text>{{data.commodityName}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>报盘方</text>
+        <text>{{data.our}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>方向</text>
+        <text>{{data.direction}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>装载期</text>
+        <text>{{data.prepareDate}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>交货期</text>
+        <text>{{data.deliveryDate}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>品种</text>
+        <text>{{data.type}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>价格</text>
+        <text>{{data.price}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>{{spNum}}</text>
+        <text>{{data.number}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>币种</text>
+        <text>{{data.currency}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>交货港</text>
+        <text>{{data.destination}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>{{spQuality}}</text>
+        <text>{{data.thickness}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>备注</text>
+        <text>{{data.note}}</text>
+      </view>
+    </view>
+    <view class="transDetailList">
+      <view class="content">
+        <text>有效期</text>
+        <text>{{data.expTime}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="changeBtn"  wx:if="{{data.status == null || data.status==''}}">
+    <text class="change-btn" bindtap="changeBtnClick">感兴趣</text>
+    <image src="../../images/Rectangle .png"></image>
+  </view>
+</view>

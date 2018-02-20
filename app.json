@@ -29,10 +29,15 @@
     "pages/capital/capital",
     "pages/capitalDetail/capitalDetail",
     "pages/foreign/foreign",
+    "pages/foreignDetail/foreignDetail",
     "pages/certificate/certificate",
+    "pages/certificateDetail/certificateDetail",
     "pages/deposit/deposit",
+    "pages/depositDetail/depositDetail",
     "pages/commodity/commodity",
+    "pages/commodityDetail/commodityDetail",
     "pages/freight/freight",
+    "pages/freightDetail/freightDetail",
     "pages/transDetail/transDetail"
   ],
   "window":{
