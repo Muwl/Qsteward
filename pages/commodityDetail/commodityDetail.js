@@ -18,8 +18,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    id = options.id;
-    this.getDetail(id);
+    var data = JSON.parse(options.data);;
+    var user = wx.getStorageSync('user');
+    if (data.jumpStatus == null || data.jumpStatus == '') {
+      this.setData({
+        sgName: '申购方',
+        sgShow: user.realName,
+        data: data
+      })
+    } else {
+      this.getDetail(data.id);
+    }
   },
 
   getDetail: function (id) {
@@ -46,23 +55,15 @@ Page({
         var rdata = result.data;
         console.log(JSON.stringify(rdata));
         if (rdata.code == 'success') {//发送成功
-          if (rdata.pager.lists[0].status == null || rdata.pager.lists[0].status == '') {
-            self.setData({
-              sgName: '申购方',
-              sgShow: user.nickName,
-              data: rdata.pager.lists[0]
-            })
-          } else {
-            self.setData({
-              sgName: '申购状态',
-              sgShow: self.data.sgStatusList[rdata.pager.lists[0].joinStatus - 1],
-              data: rdata.pager.lists[0]
-            })
-            wx.showToast({
-              title: '您已经申购过了',
-              icon: 'none'
-            })
-          }
+          self.setData({
+            sgName: '申购状态',
+            sgShow: self.data.sgStatusList[rdata.pager.lists[0].joinStatus - 1],
+            data: rdata.pager.lists[0]
+          })
+          wx.showToast({
+            title: '您已经申购过了',
+            icon: 'none'
+          })
           if (data.pager.lists[0].commodityName == '煤炭') {
             self.setData({
               spNum: '数量（吨）',

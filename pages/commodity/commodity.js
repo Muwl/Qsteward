@@ -30,6 +30,14 @@ Page({
     this.getList(page);
     console.log(this.data)
   },
+
+  itemClick: function (e) {
+    var id = e.currentTarget.id;
+    var itemData = JSON.stringify(this.data.itemDatas[id]);
+    wx.navigateTo({
+      url: "../commodityDetail/commodityDetail?data=" + itemData
+    })
+  },
   
   //网络请求获取数据
   getList:function(page){
@@ -61,7 +69,7 @@ Page({
       success: function (result) {
         wx.hideLoading();
         var rdata = result.data;
-    
+        self.setDataJumpStatus(rdata)
         if (rdata.code == 'success') {
           if(page==1){
             self.setData({
@@ -89,6 +97,18 @@ Page({
       }
     })
 
+  },
+
+  setDataJumpStatus: function (rdata) {
+    for (var i = 0; i < rdata.pager.lists.length; i++) {
+      var sid = rdata.pager.lists[i].id;
+      var list = rdata.status[sid];
+      if (list != null && list.length > 0) {
+        rdata.pager.lists[i].jumpStatus = list[0].status;
+      } else {
+        rdata.pager.lists[i].jumpStatus = '';
+      }
+    }
   },
 
   //模拟刷新数据

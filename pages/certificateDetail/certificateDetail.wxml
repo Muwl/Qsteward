@@ -66,7 +66,7 @@
       </view>
     </view>
   </view>
-  <view class="changeBtn"  wx:if="{{data.status == null || data.status==''}}">
+  <view class="changeBtn"  wx:if="{{data.jumpStatus == null || data.jumpStatus==''}}">
     <text class="change-btn" bindtap="changeBtnClick">感兴趣</text>
     <image src="../../images/Rectangle .png"></image>
   </view>
