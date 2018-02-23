@@ -325,9 +325,9 @@ Page({
   },
   //点击登录跳转到登录页面
   clickLogin:function(){
-    wx.redirectTo({
-      url: '../login/login',
-    });
+    wx.navigateBack({
+      delta:1
+    })
   }
   
 })
