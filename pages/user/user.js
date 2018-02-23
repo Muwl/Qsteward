@@ -4,18 +4,6 @@ Page({
     username:'',
     usericon:''
   },
-  onLoad: function (options) {
-    var user = wx.getStorageSync('user');
-    if (user == null || user=='') {
-      wx.redirectTo({ url: "../login/login" })
-    } else {
-      console.log(JSON.stringify(user))
-    }
-  },
-  onReady: function () {
-    this.onShow();
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */

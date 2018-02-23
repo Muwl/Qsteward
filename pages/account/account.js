@@ -35,56 +35,6 @@ Page({
       })
     } 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
-  },
-
   /**
    * 昵称输入监听
    */
@@ -160,6 +110,7 @@ Page({
       title: '',
       mask: true
     })
+    console.log(imgPath)
     wx.uploadFile({
       url: updateIconUrl,
       filePath: imgPath,
@@ -168,17 +119,14 @@ Page({
         'userid': user.id,
         'token': user.token
       },
-      header: {
-        'Content-Type': 'multipart/form-data' // 默认值
-      },
       success: function (result) {
         wx.hideLoading();
         console.log(JSON.stringify(result));
         var rdata = JSON.parse(result.data);
         console.log(JSON.stringify(rdata));
         if (rdata.code == 'success') {//修改成功
-          that.setData({
-            self: res.imgPath
+          self.setData({
+            imgUrl: imgPath
           })
           wx.showToast({
             title: "修改成功",

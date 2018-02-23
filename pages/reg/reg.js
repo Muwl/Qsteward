@@ -193,7 +193,7 @@ Page({
     wx.request({
       url: regUrl,
       data: {
-        phone: self.data.userName,
+        account: self.data.userName,
         pwd: md5.hex_md5(self.data.userPwd),
         code: self.data.verificateCode,
         sponsorCode: self.data.recommendCode,
