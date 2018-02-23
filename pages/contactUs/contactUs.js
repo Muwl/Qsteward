@@ -1,5 +1,5 @@
-const kefuUrls = "http://app.zrqgj.cn/steward_api/managerInfos"
-const issueUrl = "http://app.zrqgj.cn/steward_api/customerInfos"
+const kefuUrls = "https://app.zrqgj.cn/steward_api/managerInfos"
+const issueUrl = "https://app.zrqgj.cn/steward_api/customerInfos"
 Page({
 
   /**

@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
-	"appid": "touristappid",
-	"projectname": "ww",
+	"appid": "wx4d2ff3846a08a6fb",
+	"projectname": "Qsteward",
 	"condition": {
 		"search": {
 			"current": -1,

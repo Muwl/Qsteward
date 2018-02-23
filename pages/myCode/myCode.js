@@ -1,5 +1,5 @@
-const myCodeUrl = "http://101.132.173.126:80/steward_api/steward/sponsor/findSponsorCode";
-const ApplyUrl ="http://101.132.173.126:80/steward_api/steward/sponsor/examine"
+const myCodeUrl = "https://app.zrqgj.cn/steward_api/steward/sponsor/findSponsorCode";
+const ApplyUrl ="https://app.zrqgj.cn/steward_api/steward/sponsor/examine"
 var page = 1;
 var register = require('../../utils/refresh/refreshLoadRegister.js')
 Page({

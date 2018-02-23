@@ -1,7 +1,7 @@
-const postCode = "http://101.132.173.126:80/steward_api/steward/acquiremsg/findCode"
-const loginUrl = "http://101.132.173.126:80/steward_api/steward/user/login"
-const regUrl = "http://101.132.173.126:80/steward_api/steward/user/addUser"
-const ImgUrl = "http://101.132.173.126:80/steward_api/resource/goldccm/user/";
+const postCode = "https://app.zrqgj.cn/steward_api/steward/acquiremsg/findCode"
+const loginUrl = "https://app.zrqgj.cn/steward_api/steward/user/login"
+const regUrl = "https://app.zrqgj.cn/steward_api/steward/user/addUser"
+const ImgUrl = "https://app.zrqgj.cn/steward_api/resource/goldccm/user/";
 var md5 = require("../../utils/md5.js");
 var sedding =false;
 var timeVal = 0;//倒计时

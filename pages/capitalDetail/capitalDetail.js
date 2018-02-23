@@ -1,5 +1,5 @@
-const detailUrl ='http://101.132.173.126:80/steward_api/steward/joinTrans/findSigle'
-const subUrl = 'http://101.132.173.126:80/steward_api/steward/joinTrans/addJoinTeansMsg'
+const detailUrl ='https://app.zrqgj.cn/steward_api/steward/joinTrans/findSigle'
+const subUrl = 'https://app.zrqgj.cn/steward_api/steward/joinTrans/addJoinTeansMsg'
 var id='';
 Page({
   /**
@@ -18,6 +18,7 @@ Page({
   onLoad: function (options) {
     var data = JSON.parse(options.data);;
     var user = wx.getStorageSync('user');
+    id=data.id;
     if (data.jumpStatus == null || data.jumpStatus == '') {
       this.setData({
         sgName: '申购方',

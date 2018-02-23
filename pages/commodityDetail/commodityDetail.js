@@ -1,5 +1,5 @@
-const detailUrl = 'http://101.132.173.126:80/steward_api/steward/joinTrans/findSigle'
-const subUrl = 'http://101.132.173.126:80/steward_api/steward/joinTrans/addJoinTeansMsg'
+const detailUrl = 'https://app.zrqgj.cn/steward_api/steward/joinTrans/findSigle'
+const subUrl = 'https://app.zrqgj.cn/steward_api/steward/joinTrans/addJoinTeansMsg'
 var id = '';
 Page({
   /**
@@ -18,7 +18,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var data = JSON.parse(options.data);;
+    var data = JSON.parse(options.data);
+    id = data.id;
     var user = wx.getStorageSync('user');
     if (data.jumpStatus == null || data.jumpStatus == '') {
       this.setData({

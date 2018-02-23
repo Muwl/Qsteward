@@ -1,5 +1,5 @@
-const findJoinUrl = "http://101.132.173.126:80/steward_api/steward/auditCarr/findjoin";
-const moreUrl ="http://101.132.173.126:80/steward_api/steward/auditCarr/join"
+const findJoinUrl = "https://app.zrqgj.cn/steward_api/steward/auditCarr/findjoin";
+const moreUrl ="https://app.zrqgj.cn/steward_api/steward/auditCarr/join"
 Page({
   data: {
     itemDatas: [

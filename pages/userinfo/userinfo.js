@@ -1,3 +1,4 @@
+const perfectUrl = "https://app.zrqgj.cn/steward_api/steward/user/perfectInformation"
 Page({
 
   /**

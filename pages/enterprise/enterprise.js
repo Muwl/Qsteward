@@ -1,4 +1,4 @@
-const perfectUrl = "http://101.132.173.126:80/steward_api/steward/user/perfectInformation"
+const perfectUrl = "https://app.zrqgj.cn/steward_api/steward/user/perfectInformation"
 Page({
 
   /**

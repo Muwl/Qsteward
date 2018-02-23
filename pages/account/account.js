@@ -1,5 +1,5 @@
-const updateUrl = "http://101.132.173.126:80/steward_api/steward/user/modifUserNike"
-const updateIconUrl = "http://101.132.173.126:80/steward_api/steward/user/uploadImage"
+const updateUrl = "https://app.zrqgj.cn/steward_api/steward/user/modifUserNike"
+const updateIconUrl = "https://app.zrqgj.cn/steward_api/steward/user/uploadImage"
 Page({
   data: {
     imgUrl:"",

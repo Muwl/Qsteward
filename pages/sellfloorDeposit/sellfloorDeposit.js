@@ -1,4 +1,4 @@
-const getListUrl ="http://101.132.173.126:80/steward_api/steward/smartLabel/findSmart"
+const getListUrl ="https://app.zrqgj.cn/steward_api/steward/smartLabel/findSmart"
 Page({
   data: {
     imgurl:'../../images/close_icon.png',

@@ -1,9 +1,9 @@
-const getZJListUrl = "http://101.132.173.126:80/steward_api/steward/auditmoney/money"
-const getWHListUrl = "http://101.132.173.126:80/steward_api/steward/auditforex/forex"
-const getCKListUrl = "http://101.132.173.126:80/steward_api/steward/auditDeposit/deposit"
-const getDKZListUrl = "http://101.132.173.126:80/steward_api/steward/auditissuing/issuing"
-const getSPListUrl = "http://101.132.173.126:80/steward_api/steward/auditCommodity/commodity"
-const getYFListUrl = "http://101.132.173.126:80/steward_api/steward/auditCarr/selectpr"
+const getZJListUrl = "https://app.zrqgj.cn/steward_api/steward/auditmoney/money"
+const getWHListUrl = "https://app.zrqgj.cn/steward_api/steward/auditforex/forex"
+const getCKListUrl = "https://app.zrqgj.cn/steward_api/steward/auditDeposit/deposit"
+const getDKZListUrl = "https://app.zrqgj.cn/steward_api/steward/auditissuing/issuing"
+const getSPListUrl = "https://app.zrqgj.cn/steward_api/steward/auditCommodity/commodity"
+const getYFListUrl = "https://app.zrqgj.cn/steward_api/steward/auditCarr/selectpr"
 var page = 1;
 var register = require('../../utils/refresh/refreshLoadRegister.js')
 

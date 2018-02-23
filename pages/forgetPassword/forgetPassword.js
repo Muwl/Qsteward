@@ -1,5 +1,5 @@
-const postCode = "http://101.132.173.126:80/steward_api/steward/acquiremsg/findCode"
-const updatePwdUrl = "http://101.132.173.126:80/steward_api/steward/user/forgetPwd"
+const postCode = "https://app.zrqgj.cn/steward_api/steward/acquiremsg/findCode"
+const updatePwdUrl = "https://app.zrqgj.cn/steward_api/steward/user/forgetPwd"
 var md5 = require("../../utils/md5.js");
 
 var sedding = false;

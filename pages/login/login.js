@@ -1,5 +1,5 @@
-const loginUrl = "http://101.132.173.126:80/steward_api/steward/user/login"
-const ImgUrl ="http://101.132.173.126:80/steward_api/resource/goldccm/user/";
+const loginUrl = "https://app.zrqgj.cn/steward_api/steward/user/login"
+const ImgUrl ="https://app.zrqgj.cn/steward_api/resource/goldccm/user/";
 var md5 = require("../../utils/md5.js");
 Page({
 

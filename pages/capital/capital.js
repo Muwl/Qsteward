@@ -1,4 +1,4 @@
-const getListUrl = "http://101.132.173.126:80/steward_api/steward/auditmoney/sponsorMoney"
+const getListUrl = "https://app.zrqgj.cn/steward_api/steward/auditmoney/sponsorMoney"
 var page=1;
 var register=require('../../utils/refresh/refreshLoadRegister.js')
 Page({

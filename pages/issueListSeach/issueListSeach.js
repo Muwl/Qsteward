@@ -68,8 +68,6 @@ Page({
   //点击确定
   sure: function (e) {
     var self = this;
-    console.log('dianji==========' + self.data.id);
-
     var pages = getCurrentPages();
     var prevPage = pages[pages.length - 2]; //上一个页面
 
@@ -93,7 +91,6 @@ Page({
   },
 
    resert: function (e) {
-     console.log('dianji111==========');
     var self = this;
     this.setData({
       showType:'',

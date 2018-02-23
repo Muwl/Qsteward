@@ -1,5 +1,5 @@
 var md5 = require("../../utils/md5.js");
-const updatePwdUrl = "http://101.132.173.126:80/steward_api/steward/user/modifPwd"
+const updatePwdUrl = "https://app.zrqgj.cn/steward_api/steward/user/modifPwd"
 Page({
 
   /**
