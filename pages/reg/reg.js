@@ -191,7 +191,7 @@ Page({
       return
     }
     wx.showLoading({
-      title: '注册中',
+      title: '',
       mask: true
     })
     wx.request({
@@ -213,11 +213,6 @@ Page({
         
         console.log(JSON.stringify(rdata));
         if (rdata.code == 'success') {//发送成功
-          wx.showToast({
-            title: "注册成功",
-            icon: "success"
-            
-          }),
           self.login(self.data.userName, self.data.userPwd);
         } else {
           wx.showToast({
@@ -240,7 +235,7 @@ Page({
   //登录请求
   login: function (phone,pwd) {
     wx.showLoading({
-      title: '登录中',
+      title: '',
       mask: true
     })
     wx.request({
@@ -276,8 +271,11 @@ Page({
             data: users,
           })
           wx.showToast({
-            title: "登录成功",
+            title: "注册成功",
             icon: "success"
+          })
+          wx.reLaunch({
+            url: '../index/index'
           })
         } else {
           wx.showToast({
