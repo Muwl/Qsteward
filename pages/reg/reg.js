@@ -37,7 +37,8 @@ Page({
     showhide: true,
     passwordStatus: "show",
     showhide1: true,
-    passwordStatus1: "show"
+    passwordStatus1: "show",
+    sessionId:''
   },
 
   //获取用户输入的用户名
@@ -114,6 +115,9 @@ Page({
           wx.showToast({
             title: "发送成功",
             icon: "success"
+          })
+          self.setData({
+            sessionId: rdata.sessionId
           })
           sedding=true;
           timeVal = 60;
@@ -199,7 +203,8 @@ Page({
         sponsorCode: self.data.recommendCode,
       },
       header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
+        'content-type': 'application/x-www-form-urlencoded', // 默认值
+        'Cookie': 'JSESSIONID=' + self.data.sessionId
       },
       method: 'POST',
       success: function (result) {

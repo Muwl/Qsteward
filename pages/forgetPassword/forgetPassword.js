@@ -31,7 +31,8 @@ Page({
     code:'',
     password:'',
     showhide: true,
-    passwordStatus: "show"
+    passwordStatus: "show",
+    sessionId: ''
   },
 
   usernameInput: function (e) {
@@ -92,6 +93,9 @@ Page({
           wx.showToast({
             title: "发送成功",
             icon: "success"
+          })
+          self.setData({
+            sessionId: rdata.sessionId
           })
           sedding = true;
           timeVal = 60;
@@ -160,7 +164,8 @@ Page({
         code: self.data.code,
       },
       header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
+        'content-type': 'application/x-www-form-urlencoded', // 默认值
+        'Cookie': 'JSESSIONID=' + self.data.sessionId
       },
       method: 'POST',
       success: function (result) {
