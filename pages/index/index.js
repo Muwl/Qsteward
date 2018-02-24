@@ -59,7 +59,6 @@ Page({
       success: function (result) {
         wx.hideLoading();
         var rdata = result.data;
-        console.log(JSON.stringify(rdata));
         if (rdata.code == 'success') {
           self.setData({
             'itemDatas': rdata.findjoin

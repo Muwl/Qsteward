@@ -8,7 +8,7 @@
   <view class="mui-table">
     <view class="tableList tableListTitle">
       <view>报盘方：{{item.our}}</view>
-      <view>状态：{{item.status}}</view>
+      <view>状态：{{item.sgShow}}</view>
     </view>
     <view class="tableList">
       <view>方向：<text>{{item.direction}}</text></view>
@@ -25,7 +25,7 @@
   <view class="mui-table">
     <view class="tableList tableListTitle">
       <view>报盘方：{{item.our}}</view>
-      <view>状态：{{item.status}}</view>
+      <view>状态：{{item.sgShow}}</view>
     </view>
     <view class="tableList">
       <view>方向：<text>{{item.direction}}</text></view>
@@ -42,7 +42,7 @@
   <view class="mui-table" >
     <view class="tableList tableListTitle">
       <view>机构简称：{{item.orgAbbreviation}}</view>
-      <view>状态：{{item.status}}</view>
+      <view>状态：{{item.sgShow}}</view>
     </view>
     <view class="tableList">
       <view>方向：<text>{{item.direction}}</text></view>
@@ -59,7 +59,7 @@
   <view class="mui-table" >
     <view class="tableList tableListTitle">
       <view>报盘方：{{item.our}}</view>
-      <view>状态：{{item.status}}</view>
+      <view>状态：{{item.sgShow}}</view>
     </view>
     <view class="tableList">
       <view>方向：<text>{{item.direction}}</text></view>
@@ -76,7 +76,7 @@
   <view class="mui-table" >
     <view class="tableList tableListTitle">
       <view>商品名称：{{item.commodityName}}</view>
-      <view>状态：{{item.status}}</view>
+      <view>状态：{{item.sgShow}}</view>
     </view>
     <view class="tableList">
       <view>报盘方：<text>{{item.our}}</text></view>
@@ -93,7 +93,7 @@
   <view class="mui-table" >
     <view class="tableList tableListTitle">
       <view>运输类型：{{item.transportType}}</view>
-      <view>状态：{{item.status}}</view>
+      <view>状态：{{item.sgShow}}</view>
     </view>
     <view class="tableList">
       <view>报盘方：<text>{{item.our}}</text></view>

@@ -7,11 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showType: 'ZJ',
-    itemData: [],
+    showType: '',
+    navItems: [],
     startTime: '',
     endTime: '',
     applypr: '',
+    sgStatusList: ['申购中', '申购成功', '申购失败']
   },
   /**
  * 生命周期函数--监听页面加载
@@ -29,6 +30,9 @@ Page({
   //网络请求获取数据
   getList: function (page) {
     var self = this
+    if (self.data.showType == '') {
+      return
+    }
     wx.showLoading({
       mask: true
     })
@@ -38,7 +42,7 @@ Page({
       data: {
         userid: user.id,
         token: user.token,
-        pages: 15,
+        pages: 10,
         transType: self.data.showType,
         curPageNum: page,
         startTime: self.data.startTime,
@@ -54,16 +58,17 @@ Page({
         var rdata = result.data;
         register.loadFinish(self, true);
         if (rdata.code == 'success') {
-          if (rdata.pager.lists = '' && type == 'up') {
+          if (rdata.pager.lists == '') {
             return;
           }
+          self.setStatusShow(rdata.pager.lists)
           if (page == 1) {
             self.setData({
-              itemDatas: rdata.pager.lists
+              navItems: rdata.pager.lists
             })
           } else {
             self.setData({
-              itemDatas: self.data.itemDatas.concat(rdata.pager.lists)
+              navItems: self.data.navItems.concat(rdata.pager.lists)
             });
           }
         } else {
@@ -83,6 +88,13 @@ Page({
       }
     })
 
+  },
+
+  setStatusShow:function(list){
+    var self=this;
+    for(var i=0;i<list.length;i++){
+      list[i].sgShow = self.data.sgStatusList[list[i].joinStatus - 1]
+    }
   },
 
   //模拟刷新数据

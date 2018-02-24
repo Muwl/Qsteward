@@ -205,6 +205,7 @@ Page({
       success: function (result) {
         wx.hideLoading();
         var rdata = result.data;
+        
         console.log(JSON.stringify(rdata));
         if (rdata.code == 'success') {//发送成功
           wx.showToast({
