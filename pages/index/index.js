@@ -153,11 +153,13 @@ Page({
         title: '信息正在审核中',
         icon: 'none'
       })
+      return
     }else{
       wx.showToast({
         title: '请先完善信息',
         icon: 'none'
       })
+      return
     }
     var itemData = self.data.itemDatas[id];
     if (itemData.status == 'T') {
@@ -189,11 +191,13 @@ Page({
         title: '信息正在审核中',
         icon: 'none'
       })
+      return
     } else {
       wx.showToast({
         title: '请先完善信息',
         icon: 'none'
       })
+      return
     }
     wx.navigateTo({
       url: '../more/more',
