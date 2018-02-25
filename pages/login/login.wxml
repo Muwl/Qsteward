@@ -30,13 +30,13 @@
       <text class="login-btn" bindtap="loginBtnClick">点击登录</text>
     </view>
   </view>
-  <view class="orWidth">
-    <view class="orWidthTop">
+  <view class="orWidth" >
+    <view class="orWidthTop" wx:if="{{fasle}}">
       <view class="orWidthLine"></view>
       <text>Or with</text>
       <view class="orWidthLine"></view>
     </view>
-    <view class="wxIcon"><image src="../../images/wechat_icon.png"></image></view>
+    <view class="wxIcon" wx:if="{{fasle}}"><image src="../../images/wechat_icon.png"></image></view>
     <view class="goRegister"> 没有账户?  <navigator url="../reg/reg"><text>点击注册 </text></navigator></view>
   </view>
 </view> 

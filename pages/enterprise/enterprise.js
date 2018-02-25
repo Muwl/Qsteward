@@ -34,19 +34,19 @@ Page({
 
    jobInput: function (e) {
      this.setData({
-       cardId: e.detail.value
+       job: e.detail.value
      })
    },
 
    phoneInput: function (e) {
      this.setData({
-       cardId: e.detail.value
+       phone: e.detail.value
      })
    },
 
   addressInput: function (e) {
      this.setData({
-       cardId: e.detail.value
+       address: e.detail.value
      })
    },
 
@@ -97,7 +97,7 @@ Page({
       title: '提交中',
       mask: true
     })
-    var user=wx.getStorageInfoSync('user')
+    var user = wx.getStorageSync('user')
     wx.request({
       url: perfectUrl,
       data: {
