@@ -119,7 +119,6 @@ Page({
   itemBtnClick: function (e) {
     var self = this
     var id = e.target.id;
-    console.log(id + "======" + JSON.stringify(self.data.itemDatas));
     var itemData = self.data.itemDatas[id];
     if (itemData.status == 'T') {
       wx.navigateTo({

@@ -9,14 +9,14 @@
       <view class="login-item-info">Phone Number</view>
       <view class="login-item-input">
         <image src="../../images/phone_icon.png" class="leftPic"></image>
-        <input type='number' bindinput="usernameInput" name="userName" placeholder="请输入您的手机号" value="18526526743"/>
+        <input type='number' bindinput="usernameInput" name="userName" placeholder="请输入您的手机号" value=""/>
       </view>
     </view>
     <view class="login-item">
       <view class="login-item-info">Password</view>
       <view class="login-item-input">
         <image src="../../images/password_icon.png" class="leftPic"></image>
-        <input type='text' password="{{showhide}}" bindinput="passwordInput" name="userPwd" placeholder="请输入密码" value="123456"/>
+        <input type='text' password="{{showhide}}" bindinput="passwordInput" name="userPwd" placeholder="请输入密码" value=""/>
         <view class='seePassword' bindtap='seePassword'>
           <image src="../../images/show_icon.png"></image>
           <text>{{passwordStatus}}</text>

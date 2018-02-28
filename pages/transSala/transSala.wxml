@@ -4,7 +4,7 @@
     <block wx:for-items="{{navItems}}" wx:key="navItems">
       <view class="contentList">
         <view id='{{index}}' class="everycontent" bindtap="itemBtnClick">
-          <image src='{{item.img}}' class="typeImage" mode="aspectFill"></image>
+          <image src='{{item.img}}' id='{{index}}' class="typeImage" mode="aspectFill"></image>
           <text class="texta"  id='{{index}}' >{{item.title}}</text>
           <text class="textb"  id='{{index}}' >{{item.titleEn}}</text>
         </view>
